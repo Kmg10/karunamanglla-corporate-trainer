@@ -9,7 +9,7 @@ export const feedbackStats = {
 
 export const learnerTestimonials = [
   {
-    quote: 'Appreciate the patience of the instructor, who cleared 100s of doubts. Thank you so much. Lots of love!!!',
+    quote: 'Appreciate the patience of the instructor, who cleared hundreds of doubts. Thank you so much — lots of appreciation.',
     name: 'Analytics learner',
     org: 'Coding Ninjas',
     type: 'Admiration',
@@ -17,7 +17,7 @@ export const learnerTestimonials = [
     tint: 'bg-amber-50',
   },
   {
-    quote: "Session was wonderful and Mentor was excellent. Karuna ma'am explained every concept in a very clear and proper way.",
+    quote: 'Session was wonderful and the mentor was excellent. Karuna explained every concept in a very clear and proper way.',
     name: 'Excel cohort learner',
     org: 'IIT Guwahati E&ICT Academy',
     type: 'Praise',
@@ -25,7 +25,7 @@ export const learnerTestimonials = [
     tint: 'bg-stone-50',
   },
   {
-    quote: "Thank you, ma'am, for your excellent presentation skills and clear explanations. Your sessions make complex concepts easy to understand and engaging.",
+    quote: 'Thank you for your excellent presentation skills and clear explanations. Your sessions make complex concepts easy to understand and engaging.',
     name: 'Live program participant',
     org: 'E&ICT Academy IIT Guwahati',
     type: 'Admiration',
@@ -33,15 +33,15 @@ export const learnerTestimonials = [
     tint: 'bg-sky-50',
   },
   {
-    quote: 'That was an amazing class. Karuna mam teaches us very fine, clears all our doubts and gives quick resolve.',
-    name: 'Hinglish batch learner',
+    quote: 'That was an amazing class. Karuna teaches with great clarity, resolves doubts quickly, and keeps every session practical.',
+    name: 'Power BI cohort learner',
     org: 'Coding Ninjas',
     type: 'Praise',
     rotate: 2,
     tint: 'bg-rose-50',
   },
   {
-    quote: 'Wonderful session — the teacher was so supportive. I love my every class. Thanks Karuna for being a very helpful guide on our data analysis journey.',
+    quote: 'Wonderful session — the instructor was so supportive. I value every class. Thanks for being a very helpful guide on our data analysis journey.',
     name: 'Analytics cohort learner',
     org: 'IIT Guwahati E&ICT Academy',
     type: 'Heartfelt',
@@ -49,7 +49,7 @@ export const learnerTestimonials = [
     tint: 'bg-emerald-50',
   },
   {
-    quote: "Good session and excellent teaching skills by Karuna Ma'am. I'm waiting for Monday's class with the same kind of energy.",
+    quote: "Good session and excellent teaching skills. I'm looking forward to the next class with the same kind of energy.",
     name: 'Introduction to Analytics learner',
     org: 'Coding Ninjas',
     type: 'Praise',
@@ -57,7 +57,7 @@ export const learnerTestimonials = [
     tint: 'bg-violet-50',
   },
   {
-    quote: 'Session was outstanding — everything was from scratch and explained in a very simple way so that anyone can understand. Thank you!',
+    quote: 'Session was outstanding — everything was explained from scratch in a simple way so that anyone can understand. Thank you!',
     name: 'Analytics program learner',
     org: 'Coding Ninjas',
     type: 'Admiration',
@@ -65,7 +65,7 @@ export const learnerTestimonials = [
     tint: 'bg-amber-50',
   },
   {
-    quote: 'Instructor is best and is teaching from basics. She is so patient and understanding — very cooperative when we can\'t match up the pace.',
+    quote: 'The instructor teaches from basics with patience and understanding — very cooperative when learners need to match the pace.',
     name: 'E&ICT cohort learner',
     org: 'IIT Guwahati',
     type: 'Praise',
@@ -73,7 +73,7 @@ export const learnerTestimonials = [
     tint: 'bg-stone-50',
   },
   {
-    quote: 'Karuna ma\'am resolves each and every query. She makes it easy to understand — even the toughest concepts click. Thank you ma\'am!',
+    quote: 'Karuna resolves each and every query and makes even the toughest concepts click. Thank you for the clarity and support.',
     name: 'SQL for Data Analysis learner',
     org: 'Coding Ninjas',
     type: 'Admiration',
@@ -81,7 +81,7 @@ export const learnerTestimonials = [
     tint: 'bg-sky-50',
   },
   {
-    quote: 'That was a really helpful session. I appreciate how clearly you explained everything with relatable examples. Thank you so much for going into such detail.',
+    quote: 'A really helpful session. I appreciate how clearly everything was explained with relatable examples and thoughtful detail.',
     name: 'Live cohort participant',
     org: 'E&ICT Academy IIT Guwahati',
     type: 'Gratitude',
@@ -89,7 +89,7 @@ export const learnerTestimonials = [
     tint: 'bg-rose-50',
   },
   {
-    quote: 'The class was engaging and informative. Explanations were clear, and the interactive session helped solidify the concepts. A valuable learning experience.',
+    quote: 'The class was engaging and informative. Explanations were clear, and the interactive session helped solidify the concepts.',
     name: 'Analytics learner',
     org: 'IIT Guwahati E&ICT Academy',
     type: 'Praise',
@@ -97,8 +97,8 @@ export const learnerTestimonials = [
     tint: 'bg-emerald-50',
   },
   {
-    quote: 'Learn something new every day — my level increases bit by bit. Thank you so much Karuna mam & Coding Ninjas!',
-    name: 'Hinglish batch learner',
+    quote: 'I learn something new every session — my confidence grows steadily. Thank you, Karuna and Coding Ninjas.',
+    name: 'Data analytics learner',
     org: 'Coding Ninjas',
     type: 'Heartfelt',
     rotate: 2,

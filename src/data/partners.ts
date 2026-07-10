@@ -15,8 +15,8 @@ export const partners: Partner[] = [
   { name: 'Info Edge', shortName: 'Info Edge', logo: '/assets/logos/info-edge.png', width: 152, height: 136 },
   { name: 'Edwisor', shortName: 'Edwisor', logo: '/assets/logos/edwisor.png', width: 176, height: 92 },
   { name: 'Madrid Software', shortName: 'Madrid Software', logo: '/assets/logos/madrid-software.png', width: 196, height: 56 },
-  { name: 'Datafolkz', shortName: 'Datafolkz', logo: '/assets/logos/datafolkz.png', width: 80, height: 82 },
+  { name: 'Datafolkz', shortName: 'Datafolkz', logo: '/assets/logos/datafolkz.png', width: 118, height: 76 },
   { name: 'NPTEL', shortName: 'NPTEL', logo: '/assets/logos/nptel-crop.png', width: 156, height: 102 },
-  { name: 'INSAID', shortName: 'INSAID', logo: '/assets/logos/insaid.png', width: 64, height: 64 },
+  { name: 'INSAID', shortName: 'INSAID', logo: '/assets/logos/insaid.png', width: 100, height: 78 },
   { name: 'E&ICT Academy IIT Guwahati', shortName: 'IIT Guwahati', logo: '/assets/logos/eict-iitg.png', width: 196, height: 40 },
 ];
