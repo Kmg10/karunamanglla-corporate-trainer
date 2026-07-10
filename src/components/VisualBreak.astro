@@ -3,38 +3,24 @@
 
 <section class="py-16 border-y border-stone-800/80">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="reveal grid lg:grid-cols-2 gap-8 items-center">
-      <div class="relative rounded-2xl overflow-hidden border border-stone-800 shadow-2xl">
-        <img
-          src="/assets/workstation.jpg"
-          alt="Karuna Manglla — training and delivery"
-          class="w-full h-72 md:h-96 object-cover object-center"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-surface-950/80 via-transparent to-transparent"></div>
-        <p class="absolute bottom-4 left-5 right-5 text-sm text-stone-400 italic">
-          Where programs get designed — industry context, hands-on labs, real outcomes.
-        </p>
-      </div>
-
-      <div>
-        <p class="section-eyebrow">Delivery model</p>
-        <h2 class="font-display text-3xl text-stone-50 font-semibold mb-4">From question to capability.</h2>
-        <div class="space-y-4">
-          {[
-            { step: '01', label: 'Diagnose', desc: 'Skill gaps, roles, and business KPIs mapped upfront.' },
-            { step: '02', label: 'Design', desc: 'Custom curriculum aligned to your stack and maturity.' },
-            { step: '03', label: 'Deliver', desc: 'Hands-on labs, checkpoints, and live instructor support.' },
-            { step: '04', label: 'Measure', desc: 'Assessments, capstones, and ROI evidence for L&D.' },
-          ].map(item => (
-            <div class="flex gap-4 items-start">
-              <span class="text-xs font-mono text-brand-400 bg-brand-950/50 border border-brand-500/20 rounded-lg px-2 py-1 shrink-0">{item.step}</span>
-              <div>
-                <h3 class="text-sm font-semibold text-stone-200">{item.label}</h3>
-                <p class="text-xs text-stone-500 mt-0.5">{item.desc}</p>
-              </div>
+    <div class="reveal max-w-3xl mx-auto">
+      <p class="section-eyebrow">Delivery model</p>
+      <h2 class="font-display text-3xl text-stone-50 font-semibold mb-6">From question to capability.</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {[
+          { step: '01', label: 'Diagnose', desc: 'Skill gaps, roles, and business KPIs mapped upfront.' },
+          { step: '02', label: 'Design', desc: 'Custom curriculum aligned to your stack and maturity.' },
+          { step: '03', label: 'Deliver', desc: 'Hands-on labs, checkpoints, and live instructor support.' },
+          { step: '04', label: 'Measure', desc: 'Assessments, capstones, and ROI evidence for L&D.' },
+        ].map(item => (
+          <div class="flex gap-4 items-start card p-4">
+            <span class="text-xs font-mono text-brand-400 bg-brand-950/50 border border-brand-500/20 rounded-lg px-2 py-1 shrink-0">{item.step}</span>
+            <div>
+              <h3 class="text-sm font-semibold text-stone-200">{item.label}</h3>
+              <p class="text-xs text-stone-500 mt-0.5">{item.desc}</p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   </div>

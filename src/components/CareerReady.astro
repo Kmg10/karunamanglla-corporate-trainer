@@ -1,0 +1,58 @@
+---
+const pillars = [
+  {
+    icon: '🎯',
+    title: 'Interview preparation',
+    description: 'Mock interviews, case-study walkthroughs, and recruiter-style technical rounds — so you perform under pressure, not just in notebooks.',
+    items: ['Technical & behavioral mocks', 'Case study frameworks', 'Salary negotiation basics'],
+  },
+  {
+    icon: '🗣️',
+    title: 'Soft skills & communication',
+    description: 'Present insights to non-technical stakeholders, write crisp summaries, and collaborate in cross-functional teams — the skills that get you hired and promoted.',
+    items: ['Stakeholder storytelling', 'Executive summaries', 'Team collaboration'],
+  },
+  {
+    icon: '📁',
+    title: 'Portfolio & job readiness',
+    description: 'After mastering Python, SQL, ML, and GenAI — build a portfolio that proves you can ship. GitHub projects, capstones, and LinkedIn positioning that recruiters notice.',
+    items: ['GitHub portfolio projects', 'Capstone presentations', 'Resume & LinkedIn polish'],
+  },
+  {
+    icon: '🚀',
+    title: 'Company-ready from day one',
+    description: 'The full arc: technical depth first, then career packaging. Making you absolutely ready for companies — and the jobs you want.',
+    items: ['End-to-end career arc', 'Job application strategy', 'Onboarding confidence'],
+  },
+];
+---
+
+<section id="career-ready" class="py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal mb-12">
+      <p class="section-eyebrow">Beyond technical skills</p>
+      <h2 class="section-heading">Job-ready, not just skill-ready.</h2>
+      <p class="text-stone-500 max-w-2xl mt-2">
+        I don't stop at Python and ML. Every program includes interview prep, soft skills, and portfolio building —
+        making you absolutely ready for companies and the jobs you want.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      {pillars.map((p, i) => (
+        <div class="reveal card-hover" style={`transition-delay: ${i * 60}ms`}>
+          <div class="flex gap-3 mb-3">
+            <span class="text-2xl">{p.icon}</span>
+            <h3 class="font-semibold text-stone-100 text-lg">{p.title}</h3>
+          </div>
+          <p class="text-sm text-stone-400 mb-4 leading-relaxed">{p.description}</p>
+          <div class="flex flex-wrap gap-2">
+            {p.items.map(item => (
+              <span class="text-[11px] text-stone-400 bg-stone-800/50 border border-stone-700/50 rounded-lg px-2.5 py-1.5">{item}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

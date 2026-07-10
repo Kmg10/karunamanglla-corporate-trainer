@@ -1,6 +1,7 @@
 ---
 import GlobalReach from './graphics/GlobalReach.astro';
 import LearningStack from './graphics/LearningStack.astro';
+import { HOURS_TAUGHT } from '../config';
 
 const stats = [
   {
@@ -8,6 +9,12 @@ const stats = [
     description: 'College graduates to working professionals across global cohorts',
     gradient: 'from-brand-500/15', border: 'border-brand-500/25', iconColor: 'text-brand-400',
     icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>`,
+  },
+  {
+    value: HOURS_TAUGHT, suffix: '+', label: 'Hours taught',
+    description: 'Live instruction across bootcamps, academies, workshops, and corporate cohorts',
+    gradient: 'from-amber-500/15', border: 'border-amber-500/25', iconColor: 'text-amber-400',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>`,
   },
   {
     value: 7, suffix: '+', label: 'Years in production data science',
