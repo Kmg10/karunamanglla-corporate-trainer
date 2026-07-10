@@ -1,4 +1,5 @@
 ---
+import { CALENDLY_URL, CALENDLY_CONFIGURED } from '../config';
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 bg-surface-950/90 backdrop-blur-md border-b border-stone-800/80">
@@ -17,7 +18,7 @@
       <a href="#industry" class="hover:text-stone-200 transition-colors">Industry</a>
     </div>
 
-    <a href="#contact" class="px-4 py-2 text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white rounded-lg transition-colors">
+    <a href={CALENDLY_CONFIGURED ? CALENDLY_URL : '#contact'} target={CALENDLY_CONFIGURED ? '_blank' : undefined} rel={CALENDLY_CONFIGURED ? 'noopener noreferrer' : undefined} class="px-4 py-2 text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white rounded-lg transition-colors">
       Book a call
     </a>
   </div>

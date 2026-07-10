@@ -1,27 +1,36 @@
 ---
+import DeliveryFlow from './graphics/DeliveryFlow.astro';
 ---
 
-<section class="py-16 border-y border-stone-800/80">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="reveal max-w-3xl mx-auto">
+<section class="py-16 border-y border-stone-800/80 relative overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,rgba(20,184,166,0.06),transparent)] pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="reveal max-w-3xl mx-auto text-center mb-10">
       <p class="section-eyebrow">Delivery model</p>
-      <h2 class="font-display text-3xl text-stone-50 font-semibold mb-6">From question to capability.</h2>
-      <div class="grid sm:grid-cols-2 gap-4">
-        {[
-          { step: '01', label: 'Diagnose', desc: 'Skill gaps, roles, and business KPIs mapped upfront.' },
-          { step: '02', label: 'Design', desc: 'Custom curriculum aligned to your stack and maturity.' },
-          { step: '03', label: 'Deliver', desc: 'Hands-on labs, checkpoints, and live instructor support.' },
-          { step: '04', label: 'Measure', desc: 'Assessments, capstones, and ROI evidence for L&D.' },
-        ].map(item => (
-          <div class="flex gap-4 items-start card p-4">
-            <span class="text-xs font-mono text-brand-400 bg-brand-950/50 border border-brand-500/20 rounded-lg px-2 py-1 shrink-0">{item.step}</span>
-            <div>
-              <h3 class="text-sm font-semibold text-stone-200">{item.label}</h3>
-              <p class="text-xs text-stone-500 mt-0.5">{item.desc}</p>
-            </div>
+      <h2 class="font-display text-3xl text-stone-50 font-semibold mb-3">From question to capability.</h2>
+      <p class="text-stone-500 text-sm">A structured path from skill-gap diagnosis to measurable business outcomes.</p>
+    </div>
+
+    <div class="reveal mb-10 hidden md:block">
+      <DeliveryFlow />
+    </div>
+
+    <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {[
+        { step: '01', label: 'Diagnose', desc: 'Skill gaps, roles, and business KPIs mapped upfront.', color: 'text-brand-400 border-brand-500/20 bg-brand-950/30' },
+        { step: '02', label: 'Design', desc: 'Custom curriculum aligned to your stack and maturity.', color: 'text-sky-400 border-sky-500/20 bg-sky-950/30' },
+        { step: '03', label: 'Deliver', desc: 'Hands-on labs, checkpoints, and live instructor support.', color: 'text-violet-400 border-violet-500/20 bg-violet-950/30' },
+        { step: '04', label: 'Measure', desc: 'Assessments, capstones, and ROI evidence for L&D.', color: 'text-amber-400 border-amber-500/20 bg-amber-950/30' },
+      ].map(item => (
+        <div class="flex flex-col gap-3 card p-5 hover:-translate-y-0.5 transition-transform">
+          <span class={`text-xs font-mono w-fit rounded-lg px-2 py-1 border ${item.color}`}>{item.step}</span>
+          <div>
+            <h3 class="text-sm font-semibold text-stone-200">{item.label}</h3>
+            <p class="text-xs text-stone-500 mt-1 leading-relaxed">{item.desc}</p>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   </div>
 </section>

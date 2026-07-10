@@ -1,0 +1,35 @@
+---
+const nodes = [
+  { cx: 80, cy: 50, label: 'Edtech' },
+  { cx: 480, cy: 50, label: 'IIT' },
+  { cx: 60, cy: 140, label: 'Bootcamps' },
+  { cx: 500, cy: 140, label: 'Enterprise' },
+  { cx: 160, cy: 30, label: 'Academies' },
+  { cx: 400, cy: 30, label: 'NPTEL' },
+  { cx: 140, cy: 170, label: 'Career' },
+  { cx: 420, cy: 170, label: 'Analytics' },
+];
+---
+
+<svg class="w-full h-auto max-w-2xl mx-auto" viewBox="0 0 560 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="pn-grad" x1="0" y1="0" x2="560" y2="200">
+      <stop offset="0%" stop-color="#14b8a6" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#f59e0b" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#14b8a6" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="200" rx="20" fill="url(#pn-grad)" stroke="#292524" stroke-width="1"/>
+
+  <circle cx="280" cy="100" r="28" fill="#14b8a6" fill-opacity="0.15" stroke="#14b8a6" stroke-width="1.5" stroke-opacity="0.5"/>
+  <circle cx="280" cy="100" r="10" fill="#fbbf24" fill-opacity="0.9"/>
+  <text x="280" y="145" text-anchor="middle" fill="#a8a29e" font-size="10" font-family="system-ui">10 training partners</text>
+
+  {nodes.map((n) => (
+    <g>
+      <line x1="280" y1="100" x2={n.cx} y2={n.cy} stroke="#14b8a6" stroke-width="1" stroke-opacity="0.2"/>
+      <circle cx={n.cx} cy={n.cy} r="8" fill="#14b8a6" fill-opacity="0.5"/>
+      <text x={n.cx} y={n.cy + 22} text-anchor="middle" fill="#78716c" font-size="9" font-family="system-ui">{n.label}</text>
+    </g>
+  ))}
+</svg>

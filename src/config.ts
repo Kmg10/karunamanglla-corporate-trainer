@@ -5,7 +5,7 @@ export const TRAINER_NAME = 'Karuna Manglla';
  * Example: https://calendly.com/your-username/30min
  * Leave empty to show email booking only.
  */
-export const CALENDLY_URL = '';
+export const CALENDLY_URL = 'https://calendly.com/karuna-mangla';
 
 /** Cumulative instructor delivery hours across all programs */
 export const HOURS_TAUGHT = 10000;

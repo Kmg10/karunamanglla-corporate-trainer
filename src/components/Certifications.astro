@@ -1,17 +1,21 @@
 ---
 import { certifications } from '../data/certifications';
+import CredentialSpectrum from './graphics/CredentialSpectrum.astro';
 
-const domains = ['Machine Learning', 'Data Science', 'AI', 'GenAI', 'LLMs'];
+const domains = ['Machine Learning', 'Data Science', 'AI', 'GenAI', 'LLMs', 'IIT / NPTEL'];
 ---
 
-<section id="certifications" class="py-20 border-y border-stone-800/80">
-  <div class="max-w-6xl mx-auto px-6">
+<section id="certifications" class="py-20 border-y border-stone-800/80 relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 w-80 h-80 bg-accent-500/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
     <div class="reveal mb-12 text-center">
       <p class="section-eyebrow">International credentials</p>
       <h2 class="section-heading">Certified across the full AI stack.</h2>
       <p class="text-stone-500 max-w-2xl mx-auto mt-2">
-        Industry-recognised credentials in ML, data science, AI, GenAI, and LLMs from IBM, Google, DeepLearning.AI, and Microsoft —
-        the same practical rigour I bring into every corporate cohort.
+        Industry-recognised credentials from IBM, Google, Stanford, MIT, DeepLearning.AI, and Microsoft —
+        plus IIT Madras &amp; IIT Kharagpur programs via NPTEL. The same practical rigour I bring into every corporate cohort.
       </p>
       <div class="flex flex-wrap justify-center gap-2 mt-5">
         {domains.map((d) => (
@@ -20,18 +24,22 @@ const domains = ['Machine Learning', 'Data Science', 'AI', 'GenAI', 'LLMs'];
       </div>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="reveal hidden md:block mb-10">
+      <CredentialSpectrum />
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
       {certifications.map((c, i) => (
         <div
           class={`reveal group rounded-2xl border ${c.accent} p-5 hover:border-brand-500/35 hover:-translate-y-1 transition-all duration-300 flex flex-col`}
-          style={`transition-delay: ${i * 40}ms`}
+          style={`transition-delay: ${i * 30}ms`}
         >
           <div class="flex items-start justify-between mb-4">
-            <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center shrink-0 overflow-hidden border border-stone-200/20 p-1.5">
+            <div class="w-14 h-14 rounded-xl bg-white flex items-center justify-center shrink-0 overflow-hidden border border-stone-200/20 p-2">
               <img
                 src={c.logo}
                 alt={`${c.issuer} logo`}
-                class="max-h-9 max-w-full object-contain"
+                class="max-h-11 max-w-full object-contain"
                 loading="lazy"
                 draggable="false"
               />
@@ -47,8 +55,8 @@ const domains = ['Machine Learning', 'Data Science', 'AI', 'GenAI', 'LLMs'];
               <p class="text-sm font-semibold text-brand-300">{c.issuer}</p>
               <p class="text-[10px] text-stone-600 mt-0.5">{c.platform}</p>
             </div>
-            {c.platform === 'Coursera' && (
-              <img src="/assets/logos/cert/coursera.svg" alt="Coursera" class="h-6 w-6 rounded opacity-80" loading="lazy" draggable="false" />
+            {(c.platform === 'Coursera' || c.platform === 'NPTEL' || c.platform === 'edX') && (
+              <img src="/assets/logos/cert/coursera.svg" alt="" class="h-6 w-6 rounded opacity-60" loading="lazy" draggable="false" aria-hidden="true" />
             )}
           </div>
         </div>
@@ -56,7 +64,7 @@ const domains = ['Machine Learning', 'Data Science', 'AI', 'GenAI', 'LLMs'];
     </div>
 
     <p class="reveal text-center text-xs text-stone-600 mt-10 max-w-xl mx-auto">
-      Credentials from IBM, Google, DeepLearning.AI, and Microsoft — widely recognised in industry hiring and L&amp;D programs.
+      Credentials from IIT Madras, IIT Kharagpur, Stanford, MIT, IBM, Google, and Microsoft — widely recognised in industry hiring and L&amp;D programs.
     </p>
   </div>
 </section>

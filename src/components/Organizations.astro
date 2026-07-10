@@ -1,55 +1,42 @@
 ---
-import { partners, partnerDetails } from '../data/partners';
+import { partners } from '../data/partners';
+import PartnerNetwork from './graphics/PartnerNetwork.astro';
 
 const marqueeItems = [...partners, ...partners];
 ---
 
-<section id="orgs" class="py-20 border-y border-stone-800/80 bg-stone-900/20 overflow-hidden">
-  <div class="max-w-6xl mx-auto px-6">
+<section id="orgs" class="py-20 border-y border-stone-800/80 bg-stone-900/20 overflow-hidden relative">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_100%,rgba(20,184,166,0.08),transparent)] pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
     <div class="reveal mb-10">
       <p class="section-eyebrow">Trusted by</p>
       <h2 class="section-heading">Organizations I've trained with.</h2>
       <p class="text-stone-500 max-w-2xl mt-2">Edtech leaders, IIT partnerships, premier institutes, and enterprise L&amp;D partners — across India and global virtual cohorts.</p>
     </div>
 
-    <!-- Rolling logo marquee -->
-    <div class="reveal relative mb-14">
-      <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-stone-950 to-transparent z-10 pointer-events-none"></div>
-      <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-stone-950 to-transparent z-10 pointer-events-none"></div>
-      <div class="logo-marquee-track flex items-center gap-10 py-6">
-        {marqueeItems.map((org, i) => (
-          <div class="logo-marquee-item shrink-0 flex items-center justify-center h-16 w-36 px-4 rounded-xl bg-white border border-stone-200/80 shadow-sm" title={org.name}>
+    <div class="reveal hidden md:block mb-12">
+      <PartnerNetwork />
+    </div>
+
+    <!-- Rolling logo marquee — logos + names, no card boxes -->
+    <div class="reveal relative">
+      <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-stone-950 via-stone-950/80 to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-stone-950 via-stone-950/80 to-transparent z-10 pointer-events-none"></div>
+      <div class="logo-marquee-track flex items-start gap-14 py-4">
+        {marqueeItems.map((org) => (
+          <div class="logo-marquee-item shrink-0 flex flex-col items-center gap-3 w-28" title={org.name}>
             <img
               src={org.logo}
               alt={`${org.name} logo`}
-              class="max-h-10 max-w-full object-contain"
+              class="h-16 w-auto max-w-[120px] object-contain drop-shadow-lg"
               loading="lazy"
               draggable="false"
             />
+            <span class="text-xs font-medium text-stone-400 text-center leading-tight">{org.shortName}</span>
           </div>
         ))}
       </div>
-    </div>
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {partnerDetails.map((org, i) => (
-        <div class={`reveal p-5 rounded-2xl border ${org.accent} hover:border-brand-500/30 transition-colors`} style={`transition-delay: ${i * 40}ms`}>
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-14 h-10 rounded-lg bg-white flex items-center justify-center shrink-0 overflow-hidden border border-stone-200/30 px-2">
-              <img
-                src={org.logo}
-                alt={`${org.name} logo`}
-                class="max-h-8 max-w-full object-contain"
-                loading="lazy"
-                draggable="false"
-              />
-            </div>
-            <h3 class="font-display text-lg text-stone-50 font-semibold leading-tight">{org.name}</h3>
-          </div>
-          <p class="text-[11px] text-stone-500 uppercase tracking-wider">{org.tagline}</p>
-          <p class="text-sm text-stone-400 mt-3 leading-relaxed">{org.role}</p>
-        </div>
-      ))}
     </div>
   </div>
 </section>
@@ -57,7 +44,7 @@ const marqueeItems = [...partners, ...partners];
 <style>
   .logo-marquee-track {
     width: max-content;
-    animation: marquee-scroll 40s linear infinite;
+    animation: marquee-scroll 45s linear infinite;
   }
   .logo-marquee-track:hover {
     animation-play-state: paused;
