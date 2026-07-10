@@ -1,0 +1,65 @@
+---
+const principles = [
+  {
+    num: '01',
+    title: 'Business-first, not tool-first',
+    description: 'Every module ties back to decisions, revenue, cost, risk, or efficiency. Participants learn why before how — so skills stick beyond the classroom.',
+    icon: '🎯',
+  },
+  {
+    num: '02',
+    title: 'Learn by doing — always',
+    description: 'Labs, capstones, and company-relevant datasets replace passive lectures. If they\'re not coding, querying, or building by hour two, the session is wrong.',
+    icon: '🛠️',
+  },
+  {
+    num: '03',
+    title: 'Role-based learning paths',
+    description: 'Analysts, engineers, managers, and executives don\'t need the same curriculum. Programs are mapped to job functions and competency tiers.',
+    icon: '🗺️',
+  },
+  {
+    num: '04',
+    title: 'Measurable outcomes',
+    description: 'Pre/post assessments, project rubrics, and skill matrices give L&D and HR partners the evidence they need for ROI conversations.',
+    icon: '📏',
+  },
+  {
+    num: '05',
+    title: 'Production credibility',
+    description: 'I build the systems I teach — LTV engines, ML pipelines, GenAI prototypes at 500M+ user scale. Learners get industry patterns, not textbook abstractions.',
+    icon: '⚙️',
+  },
+  {
+    num: '06',
+    title: 'Sustainable upskilling',
+    description: 'Playbooks, job aids, and mentor-style follow-through so learning continues after the program ends. Training that doesn\'t evaporate in a week.',
+    icon: '🌱',
+  },
+];
+---
+
+<section id="philosophy" class="py-24 border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal mb-16 text-center max-w-3xl mx-auto">
+      <p class="text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">Training philosophy</p>
+      <h2 class="section-heading">How I make 5,000+ learners actually retain what they learn.</h2>
+      <p class="section-subheading mx-auto mt-3">
+        Six principles that separate corporate training that transforms teams from workshops that check a box.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {principles.map((p, i) => (
+        <div class="reveal card group hover:border-brand-500/30 transition-all duration-300" style={`transition-delay: ${i * 70}ms`}>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">{p.icon}</span>
+            <span class="text-xs font-mono text-brand-500/60">{p.num}</span>
+          </div>
+          <h3 class="font-semibold text-white text-base mb-2 group-hover:text-brand-300 transition-colors">{p.title}</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">{p.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

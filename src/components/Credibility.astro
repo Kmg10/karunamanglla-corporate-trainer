@@ -1,0 +1,103 @@
+---
+import { PORTFOLIO_URL } from '../config';
+
+const credentials = [
+  {
+    icon: '🏗️',
+    title: 'Production systems at Fortune scale',
+    detail: 'Data Science & AI Manager at JioStar (Disney+ Hotstar) — 500M+ users, 800M+ records/day, 5 live ML systems. I teach what I ship.',
+  },
+  {
+    icon: '🧠',
+    title: 'Mind Share — org-wide upskilling',
+    detail: 'Designed and delivered internal teaching sessions on survival modeling, causal inference, and experimental design — upskilling analysts into practicing data scientists.',
+  },
+  {
+    icon: '🏆',
+    title: 'CEO-recognised innovation',
+    detail: 'LLM-powered prototypes, automation saving 60+ hours per cycle, and work cited by the Head of Disney+ Hotstar in C-suite review. Credibility that resonates with leadership audiences.',
+  },
+  {
+    icon: '🗣️',
+    title: 'Persuasive cross-audience communication',
+    detail: 'Known for articulating complex analysis to both technical and business audiences — from analysts to the CEO. Essential for training that lands with every stakeholder level.',
+  },
+];
+
+const testimonials = [
+  {
+    quote: 'Designed and ran teaching sessions on survival modeling, causal inference, and experimental design for the broader analytics organization. Upskilled analysts into practicing data scientists and introduced ML workflows org-wide.',
+    source: 'Mind Share Knowledge Sessions',
+    org: 'JioStar Analytics · Internal Teaching',
+  },
+  {
+    quote: 'Karuna demonstrates exceptional dedication and work ethic. Her guidance & mentorship is commendable — she fosters collaboration and consistently exhibits end-to-end ownership.',
+    source: 'Direct Manager',
+    org: 'JioStar (Disney+ Hotstar)',
+  },
+  {
+    quote: 'Exceptional communication skills, facilitating seamless collaboration. Great at articulating analysis to both technical and business audiences — reliable, genuine, and talented.',
+    source: 'Team & Stakeholders',
+    org: 'JioStar (Disney+ Hotstar)',
+  },
+];
+---
+
+<section id="credibility" class="py-24 bg-gray-900/30 border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal mb-16">
+      <p class="text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">Why organizations choose me</p>
+      <h2 class="section-heading">A practitioner who teaches — not a trainer who theorizes.</h2>
+      <p class="section-subheading mt-3">
+        The difference: I've built production ML at India's largest streaming platform, upskilled entire analytics orgs,
+        and trained 5,000+ learners globally. Your teams learn from someone who has done the work.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
+      {credentials.map((c, i) => (
+        <div class="reveal card-hover flex gap-4" style={`transition-delay: ${i * 70}ms`}>
+          <span class="text-2xl shrink-0">{c.icon}</span>
+          <div>
+            <h3 class="font-semibold text-white text-base mb-2">{c.title}</h3>
+            <p class="text-sm text-gray-400 leading-relaxed">{c.detail}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="reveal mb-16">
+      <div class="card bg-gradient-to-r from-brand-900/40 via-gray-900 to-purple-900/30 border-brand-500/20 flex flex-col md:flex-row items-center gap-6 p-8">
+        <div class="flex-1">
+          <p class="text-brand-400 text-xs font-semibold uppercase tracking-widest mb-2">See the work behind the teaching</p>
+          <h3 class="text-xl font-display font-semibold text-white mb-2">Production portfolio — LTV engines, GenAI, ML at scale</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Explore case studies, methodology deep-dives, and the systems that inform every training program I design.
+          </p>
+        </div>
+        <a href={PORTFOLIO_URL} target="_blank" rel="noopener noreferrer" class="btn-primary shrink-0">
+          View work portfolio
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <p class="text-brand-400 text-sm font-semibold uppercase tracking-widest mb-8">What learners & colleagues say</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {testimonials.map((t, i) => (
+          <div class="card" style={`transition-delay: ${i * 80}ms`}>
+            <svg class="w-7 h-7 text-brand-500/40 mb-3" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <blockquote class="text-gray-300 text-sm leading-relaxed mb-4 italic">"{t.quote}"</blockquote>
+            <div class="border-t border-white/10 pt-3">
+              <p class="font-semibold text-white text-sm">{t.source}</p>
+              <p class="text-gray-500 text-xs mt-0.5">{t.org}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

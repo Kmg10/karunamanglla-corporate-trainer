@@ -1,0 +1,79 @@
+---
+const audiences = [
+  {
+    icon: '🎓',
+    title: 'College Graduates & Early Career',
+    age: 'Ages 20–25',
+    description: 'Bridge the gap between academic theory and industry-ready skills. Structured onboarding for first data roles — Python, SQL, statistics, and professional workflows from day one.',
+    outcomes: ['Job-ready technical foundation', 'Portfolio-worthy capstone projects', 'Interview & workplace confidence', 'Mentorship-style guidance'],
+    gradient: 'from-brand-500/15',
+    border: 'border-brand-500/25',
+  },
+  {
+    icon: '💼',
+    title: 'Working Professionals & Analysts',
+    age: 'Ages 25–40',
+    description: 'Upskill analysts into data scientists, engineers into ML practitioners, and business teams into data-literate decision-makers. Programs map to your org\'s actual tech stack and KPIs.',
+    outcomes: ['Role-specific skill acceleration', 'Cross-functional fluency', 'Production-minded workflows', 'Immediate on-the-job application'],
+    gradient: 'from-emerald-500/15',
+    border: 'border-emerald-500/25',
+  },
+  {
+    icon: '👔',
+    title: 'Senior Leaders & Executives',
+    age: 'Ages 35–50',
+    description: 'AI literacy for decision-makers who don\'t need to code — but need to evaluate vendors, set strategy, and ask the right questions. GenAI governance, ROI framing, and responsible adoption.',
+    outcomes: ['Strategic AI fluency', 'Vendor & build-vs-buy judgment', 'Risk & governance awareness', 'Confident boardroom conversations'],
+    gradient: 'from-purple-500/15',
+    border: 'border-purple-500/25',
+  },
+  {
+    icon: '🏢',
+    title: 'Corporate L&D & HR Partners',
+    age: 'Enterprise programs',
+    description: 'Your partner for academy design, train-the-trainer, cohort management, and measurable upskilling ROI. I speak both data science and stakeholder — so programs land with leadership buy-in.',
+    outcomes: ['Custom curriculum design', 'Pre/post skill assessments', 'Cohort & academy blueprints', 'Executive reporting dashboards'],
+    gradient: 'from-accent-500/15',
+    border: 'border-accent-500/25',
+  },
+];
+---
+
+<section id="audiences" class="py-24 border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal mb-16">
+      <p class="text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">Who I train</p>
+      <h2 class="section-heading">One trainer. Every stage of the career arc.</h2>
+      <p class="section-subheading mt-3">
+        From fresh graduates entering their first data role to executives steering GenAI strategy —
+        programs are calibrated by age, experience, and business context (typically ages 20–50).
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {audiences.map((a, i) => (
+        <div
+          class={`reveal card-hover bg-gradient-to-br ${a.gradient} ${a.border} flex flex-col`}
+          style={`transition-delay: ${i * 80}ms`}
+        >
+          <div class="flex items-start gap-4 mb-4">
+            <span class="text-3xl">{a.icon}</span>
+            <div>
+              <h3 class="font-semibold text-white text-lg leading-snug">{a.title}</h3>
+              <span class="chip-brand text-xs mt-2">{a.age}</span>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-5">{a.description}</p>
+          <div class="mt-auto">
+            <p class="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-3">Key outcomes</p>
+            <div class="grid grid-cols-2 gap-2">
+              {a.outcomes.map(o => (
+                <span class="text-xs text-gray-300 bg-white/5 border border-white/10 rounded-lg px-3 py-2">{o}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

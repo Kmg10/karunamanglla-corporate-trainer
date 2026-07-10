@@ -1,0 +1,153 @@
+---
+import { PORTFOLIO_URL } from '../config';
+
+const headshot = '/assets/karuna-headshot.jpg';
+
+const floatingTags = [
+  'Python', 'SQL', 'PySpark', 'GenAI', 'LLMs', 'Tableau',
+  'Machine Learning', 'Statistics', 'Databricks', 'RAG',
+  'Data Analysis', 'MLOps', 'Power BI', 'Causal Inference',
+];
+---
+
+<section id="hero" class="hero-section min-h-screen flex items-center pt-16 relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <svg class="w-full h-full opacity-[0.07]" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="dotgrid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1.5" fill="#818cf8"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dotgrid)"/>
+    </svg>
+  </div>
+
+  <div class="absolute top-1/4 -left-48 w-[560px] h-[560px] bg-brand-500/18 rounded-full blur-[110px] pointer-events-none animate-pulse-slow"></div>
+  <div class="absolute bottom-1/4 -right-32 w-[480px] h-[480px] bg-accent-500/12 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="absolute top-16 right-1/3 w-[280px] h-[280px] bg-emerald-500/8 rounded-full blur-[90px] pointer-events-none"></div>
+
+  <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    {floatingTags.map((tag, i) => (
+      <span
+        class="absolute text-[11px] font-mono px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-gray-400 animate-float"
+        style={`left: ${8 + (i * 6.2) % 82}%; top: ${12 + (i * 11.3) % 72}%; animation-delay: ${i * 0.35}s; animation-duration: ${5 + (i % 4)}s;`}
+      >
+        {tag}
+      </span>
+    ))}
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6 py-20 relative z-10 w-full">
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+      <div>
+        <div class="flex items-center gap-3 mb-8">
+          <span class="chip-brand">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Corporate Data Science &amp; AI Training
+          </span>
+        </div>
+
+        <h1 class="font-display font-bold text-5xl md:text-6xl text-white leading-[1.05] tracking-tight mb-6">
+          I don't teach theory.<br />
+          I teach what <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-emerald-400 to-accent-400">ships.</span>
+        </h1>
+
+        <p class="text-xl text-gray-300 max-w-xl mb-8 leading-relaxed">
+          I'm <strong class="text-white">Karuna Manglla</strong> — a production Data Science &amp; AI leader who has trained
+          <strong class="text-white">5,000+ learners</strong> worldwide, from fresh graduates to senior professionals (ages 20–50).
+          My corporate programs turn Python, SQL, PySpark, BI, and GenAI into skills your teams use on Monday morning.
+        </p>
+
+        <div class="flex flex-wrap gap-2.5 mb-10">
+          <span class="chip-gray">5,000+ learners trained globally</span>
+          <span class="chip-gray">7+ yrs building production ML at scale</span>
+          <span class="chip-gray">Fortune-scale platform experience</span>
+          <span class="chip-gray">Beginner → advanced pathways</span>
+          <span class="chip-gray">Virtual · hybrid · onsite</span>
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact" class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Discuss corporate training
+          </a>
+          <a href="#curriculum" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            View curriculum
+          </a>
+          <a href={PORTFOLIO_URL} target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Work portfolio
+          </a>
+        </div>
+      </div>
+
+      <div class="hidden lg:flex flex-col items-center gap-5">
+        <div class="relative">
+          <img
+            src={headshot}
+            alt="Karuna Manglla — Corporate Data Science & AI Trainer"
+            class="w-40 h-40 rounded-2xl object-cover border-2 border-brand-500/40 shadow-2xl shadow-brand-500/25"
+          />
+          <div class="absolute -bottom-2 -right-2 bg-emerald-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-lg flex items-center gap-1">
+            <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
+            Open for corporate engagements
+          </div>
+        </div>
+
+        <div class="w-full max-w-sm bg-gray-900/75 border border-white/10 rounded-2xl p-5 backdrop-blur-sm">
+          <p class="text-xs text-gray-500 uppercase tracking-widest mb-4 font-semibold">Training at a glance</p>
+          <div class="space-y-3">
+            {[
+              { label: 'Learners trained', value: '5,000+', color: 'text-brand-400' },
+              { label: 'Age range served', value: '20 – 50', color: 'text-emerald-400' },
+              { label: 'Delivery modes', value: 'Corp · Academy · Bootcamp', color: 'text-purple-400' },
+              { label: 'Primary focus', value: 'Enterprise upskilling', color: 'text-orange-400' },
+            ].map(row => (
+              <div class="flex items-center justify-between gap-3 border-b border-white/5 pb-2 last:border-0 last:pb-0">
+                <span class="text-xs text-gray-500">{row.label}</span>
+                <span class={`text-sm font-semibold ${row.color}`}>{row.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="w-full max-w-sm grid grid-cols-3 gap-3">
+          {[
+            { n: '15+', label: 'Topic areas' },
+            { n: '3', label: 'Skill tiers' },
+            { n: 'Global', label: 'Reach' },
+          ].map(s => (
+            <div class="bg-gray-900/75 border border-white/10 rounded-xl p-3 text-center backdrop-blur-sm">
+              <div class="text-lg font-display font-bold text-white">{s.n}</div>
+              <div class="text-xs text-gray-500 mt-0.5">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600">
+    <svg width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-width="1.5" class="animate-bounce">
+      <path d="M8 2v16M1 11l7 7 7-7"/>
+    </svg>
+  </div>
+</section>
+
+<style>
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.15; }
+    50% { opacity: 0.28; }
+  }
+  .animate-pulse-slow {
+    animation: pulse-slow 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.45; }
+    50% { transform: translateY(-12px) rotate(1deg); opacity: 0.75; }
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+</style>

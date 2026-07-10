@@ -1,0 +1,134 @@
+---
+const pillars = [
+  {
+    icon: '🐍',
+    title: 'Python for Data Science',
+    level: 'Foundational → Advanced',
+    topics: ['Data structures & scripting', 'Pandas, NumPy, visualization', 'OOP & production patterns', 'APIs, automation & notebooks'],
+    color: 'border-brand-500/30 from-brand-500/10',
+    tag: 'Core',
+  },
+  {
+    icon: '🗄️',
+    title: 'SQL & Data Engineering',
+    level: 'Analyst → Engineer',
+    topics: ['Query fundamentals to window functions', 'Data modeling & warehousing', 'ETL/ELT design patterns', 'Performance tuning & best practices'],
+    color: 'border-cyan-500/30 from-cyan-500/10',
+    tag: 'Core',
+  },
+  {
+    icon: '⚡',
+    title: 'PySpark & Big Data',
+    level: 'Practitioner → Advanced',
+    topics: ['Distributed computing concepts', 'Spark SQL & DataFrames', 'Databricks workflows', 'Pipeline optimization at scale'],
+    color: 'border-purple-500/30 from-purple-500/10',
+    tag: 'Scale',
+  },
+  {
+    icon: '📊',
+    title: 'Business Intelligence',
+    level: 'All levels',
+    topics: ['Dashboard design & KPI frameworks', 'Tableau, Power BI & self-service BI', 'Executive storytelling', 'Metrics that drive decisions'],
+    color: 'border-orange-500/30 from-orange-500/10',
+    tag: 'Business',
+  },
+  {
+    icon: '📈',
+    title: 'Data Analysis & Statistics',
+    level: 'Foundational → Practitioner',
+    topics: ['Exploratory data analysis', 'Hypothesis testing & A/B design', 'Causal inference fundamentals', 'Insight generation for stakeholders'],
+    color: 'border-emerald-500/30 from-emerald-500/10',
+    tag: 'Core',
+  },
+  {
+    icon: '🤖',
+    title: 'Machine Learning',
+    level: 'Practitioner → Advanced',
+    topics: ['Supervised & unsupervised learning', 'Feature engineering & model selection', 'Evaluation, bias & interpretability', 'MLOps awareness & deployment'],
+    color: 'border-blue-500/30 from-blue-500/10',
+    tag: 'Advanced',
+  },
+  {
+    icon: '✨',
+    title: 'LLMs & Generative AI',
+    level: 'All levels',
+    topics: ['Prompt engineering & LLM fundamentals', 'RAG architectures & vector search', 'AI agents & workflow automation', 'Enterprise GenAI governance & safety'],
+    color: 'border-pink-500/30 from-pink-500/10',
+    tag: 'Trending',
+  },
+  {
+    icon: '🛠️',
+    title: 'Tools & Modern Stack',
+    level: 'Role-based',
+    topics: ['Git, Airflow, Docker basics', 'Cloud data platforms', 'Jupyter → production handoff', 'Industry tool fluency by engagement'],
+    color: 'border-gray-500/30 from-white/5',
+    tag: 'Practical',
+  },
+];
+---
+
+<section id="curriculum" class="py-24 bg-gray-900/30 border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal mb-16">
+      <p class="text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">Full-stack curriculum</p>
+      <h2 class="section-heading">Every competency your data &amp; AI org needs.</h2>
+      <p class="section-subheading mt-3">
+        Modular pillars that stack into role-based learning paths — customized per team, industry, and maturity level.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+      {pillars.map((p, i) => (
+        <div
+          class={`reveal card-hover bg-gradient-to-br ${p.color} flex flex-col`}
+          style={`transition-delay: ${i * 50}ms`}
+        >
+          <div class="flex items-start justify-between mb-3">
+            <span class="text-2xl">{p.icon}</span>
+            <span class="chip-gray text-[10px]">{p.tag}</span>
+          </div>
+          <h3 class="font-semibold text-white text-base leading-snug mb-1">{p.title}</h3>
+          <p class="text-xs text-brand-400 font-medium mb-4">{p.level}</p>
+          <ul class="space-y-2 mt-auto">
+            {p.topics.map(t => (
+              <li class="text-sm text-gray-400 flex items-start gap-2">
+                <span class="text-brand-500 mt-1 shrink-0">›</span>
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Learning path diagram -->
+    <div class="reveal">
+      <div class="bg-gray-900/70 border border-white/10 rounded-2xl p-6 md:p-8 overflow-x-auto">
+        <p class="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-6">Typical corporate learning path</p>
+        <div class="flex items-stretch gap-0 min-w-max mx-auto w-fit">
+          {[
+            { step: '01', label: 'Assess', desc: 'Skill gap\n& role mapping', color: 'bg-brand-900/60 border-brand-500/40' },
+            { step: '02', label: 'Foundations', desc: 'Python · SQL\n& statistics', color: 'bg-purple-900/40 border-purple-500/30' },
+            { step: '03', label: 'Applied', desc: 'BI · analysis\n& projects', color: 'bg-cyan-900/40 border-cyan-500/30' },
+            { step: '04', label: 'Advanced', desc: 'ML · PySpark\n& scale', color: 'bg-emerald-900/40 border-emerald-500/30' },
+            { step: '05', label: 'GenAI', desc: 'LLMs · RAG\n& agents', color: 'bg-pink-900/40 border-pink-500/30' },
+            { step: '06', label: 'Capstone', desc: 'Business\nproject', color: 'bg-accent-500/10 border-accent-500/30' },
+          ].map((s, i) => (
+            <>
+              <div class={`flex flex-col items-center gap-2 px-5 py-4 rounded-xl border ${s.color} min-w-[100px]`}>
+                <span class="text-[10px] font-mono text-gray-500">{s.step}</span>
+                <span class="text-sm font-semibold text-white">{s.label}</span>
+                <span class="text-xs text-gray-400 text-center whitespace-pre-line leading-tight">{s.desc}</span>
+              </div>
+              {i < 5 && (
+                <div class="flex items-center px-1 text-gray-600">
+                  <svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M0 6h17M12 1l6 5-6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              )}
+            </>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
