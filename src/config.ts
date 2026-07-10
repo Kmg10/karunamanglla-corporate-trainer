@@ -1,11 +1,10 @@
 export const TRAINER_NAME = 'Karuna Manglla';
 
 /**
- * Calendly setup — paste your full event URL once your account is live.
- * Example: https://calendly.com/your-username/30min
- * Leave empty to show email booking only.
+ * Calendly scheduling URL — use Manglla spelling to match site branding.
+ * Update your Calendly account URL at calendly.com/account/settings if needed.
  */
-export const CALENDLY_URL = 'https://calendly.com/karuna-mangla';
+export const CALENDLY_URL = 'https://calendly.com/karuna-manglla';
 
 /** Cumulative instructor delivery hours across all programs */
 export const HOURS_TAUGHT = 10000;
