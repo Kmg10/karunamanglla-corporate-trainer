@@ -1,14 +1,16 @@
 ---
-import { CALENDLY_URL } from '../config';
+import { CALENDLY_URL, CALENDLY_CONFIGURED } from '../config';
 ---
 
-<footer class="py-6 border-t border-stone-800/80">
+<footer class="py-6 border-t border-stone-800/80 allow-select">
   <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-600">
     <p>© {new Date().getFullYear()} Karuna Manglla · Corporate Data Science &amp; AI Training</p>
     <div class="flex gap-5">
       <a href="https://www.linkedin.com/in/karuna-mangla" target="_blank" rel="noopener noreferrer" class="hover:text-stone-400 transition-colors">LinkedIn</a>
       <a href="mailto:karuna.mangla@gmail.com" class="hover:text-stone-400 transition-colors">Email</a>
-      <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" class="hover:text-stone-400 transition-colors">Book a call</a>
+      {CALENDLY_CONFIGURED && (
+        <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" class="hover:text-stone-400 transition-colors">Book a call</a>
+      )}
     </div>
   </div>
 </footer>
