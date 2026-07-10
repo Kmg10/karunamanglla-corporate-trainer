@@ -1,0 +1,21 @@
+---
+const layers = [
+  { label: 'GenAI & LLMs', color: '#f59e0b', y: 30, w: 280 },
+  { label: 'Machine Learning', color: '#8b5cf6', y: 70, w: 260 },
+  { label: 'PySpark & Big Data', color: '#14b8a6', y: 110, w: 240 },
+  { label: 'SQL & BI', color: '#38bdf8', y: 150, w: 220 },
+  { label: 'Python & Statistics', color: '#34d399', y: 190, w: 200 },
+];
+---
+
+<svg class="w-full h-auto" viewBox="0 0 360 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="360" height="240" rx="14" fill="#1c1917" stroke="#292524"/>
+  <text x="24" y="22" fill="#78716c" font-size="10" font-family="system-ui" letter-spacing="0.12em">LEARNING STACK</text>
+  {layers.map(l => (
+    <g>
+      <rect x="24" y={l.y} width={l.w} height="28" rx="6" fill={l.color} fill-opacity="0.15" stroke={l.color} stroke-opacity="0.35" stroke-width="1"/>
+      <text x="36" y={l.y + 18} fill="#e7e5e4" font-size="11" font-family="system-ui">{l.label}</text>
+    </g>
+  ))}
+  <path d="M310 60 L340 120 L310 180" stroke="#14b8a6" stroke-width="1.5" stroke-opacity="0.5" fill="none"/>
+</svg>

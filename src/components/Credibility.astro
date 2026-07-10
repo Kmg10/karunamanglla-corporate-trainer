@@ -1,0 +1,59 @@
+---
+import { PORTFOLIO_URL } from '../config';
+
+const testimonials = [
+  {
+    quote: 'Designed and ran teaching sessions on survival modeling, causal inference, and experimental design — upskilled analysts into practicing data scientists org-wide.',
+    source: 'Mind Share Knowledge Sessions', org: 'JioStar Analytics',
+  },
+  {
+    quote: 'Exceptional dedication and work ethic. Her guidance & mentorship is commendable — fosters collaboration and end-to-end ownership.',
+    source: 'Direct Manager', org: 'JioStar (Disney+ Hotstar)',
+  },
+  {
+    quote: 'Exceptional communication skills. Great at articulating analysis to both technical and business audiences — reliable and talented.',
+    source: 'Team & Stakeholders', org: 'JioStar (Disney+ Hotstar)',
+  },
+];
+---
+
+<section id="credibility" class="py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal mb-10">
+      <p class="section-eyebrow">Why organizations choose me</p>
+      <h2 class="section-heading">A practitioner who teaches.</h2>
+    </div>
+
+    <div class="reveal grid md:grid-cols-2 gap-4 mb-12">
+      {[
+        { icon: '🏗️', title: 'Production at Fortune scale', detail: 'DS & AI Manager at JioStar — 500M+ users, 800M+ records/day, 5 live ML systems.' },
+        { icon: '🧠', title: 'Org-wide upskilling', detail: 'Mind Share sessions on survival modeling, causal inference, and experimental design.' },
+        { icon: '🏆', title: 'CEO-recognised innovation', detail: 'LLM prototypes and automation saving 60+ hours per cycle — cited in C-suite review.' },
+        { icon: '🗣️', title: 'Cross-audience communication', detail: 'From analysts to the CEO — training that lands with every stakeholder level.' },
+      ].map((c, i) => (
+        <div class="card flex gap-4" style={`transition-delay: ${i * 40}ms`}>
+          <span class="text-xl shrink-0">{c.icon}</span>
+          <div>
+            <h3 class="font-semibold text-stone-100 text-sm mb-1">{c.title}</h3>
+            <p class="text-xs text-stone-500 leading-relaxed">{c.detail}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="reveal grid md:grid-cols-3 gap-4 mb-10">
+      {testimonials.map(t => (
+        <div class="card">
+          <blockquote class="text-sm text-stone-400 italic leading-relaxed mb-4">"{t.quote}"</blockquote>
+          <p class="text-xs font-semibold text-stone-200">{t.source}</p>
+          <p class="text-[10px] text-stone-600">{t.org}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="reveal card flex flex-col sm:flex-row items-center justify-between gap-4 p-6 border-brand-500/20 bg-brand-950/15">
+      <p class="text-sm text-stone-400">Explore the production systems behind every training program.</p>
+      <a href={PORTFOLIO_URL} target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm shrink-0">View work portfolio ↗</a>
+    </div>
+  </div>
+</section>

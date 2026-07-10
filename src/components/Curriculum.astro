@@ -1,38 +1,41 @@
 ---
-const topics = [
-  { name: 'Python', icon: '🐍' },
-  { name: 'SQL', icon: '🗄️' },
-  { name: 'PySpark', icon: '⚡' },
-  { name: 'Business Intelligence', icon: '📊' },
-  { name: 'Data Analysis', icon: '📈' },
-  { name: 'Machine Learning', icon: '🤖' },
-  { name: 'LLMs & GenAI', icon: '✨' },
-  { name: 'Tools & MLOps', icon: '🛠️' },
+const pillars = [
+  { icon: '🐍', title: 'Python for Data Science', level: 'Foundational → Advanced', topics: ['Data structures & scripting', 'Pandas, NumPy, visualization', 'OOP & production patterns', 'APIs, automation & notebooks'], tag: 'Core' },
+  { icon: '🗄️', title: 'SQL & Data Engineering', level: 'Analyst → Engineer', topics: ['Query fundamentals to window functions', 'Data modeling & warehousing', 'ETL/ELT design patterns', 'Performance tuning'], tag: 'Core' },
+  { icon: '⚡', title: 'PySpark & Big Data', level: 'Practitioner → Advanced', topics: ['Distributed computing', 'Spark SQL & DataFrames', 'Databricks workflows', 'Pipeline optimization'], tag: 'Scale' },
+  { icon: '📊', title: 'Business Intelligence', level: 'All levels', topics: ['Dashboard design & KPIs', 'Tableau, Power BI & self-service BI', 'Executive storytelling', 'Metrics that drive decisions'], tag: 'Business' },
+  { icon: '📈', title: 'Data Analysis & Statistics', level: 'Foundational → Practitioner', topics: ['Exploratory data analysis', 'Hypothesis testing & A/B design', 'Causal inference fundamentals', 'Insight generation'], tag: 'Core' },
+  { icon: '🤖', title: 'Machine Learning', level: 'Practitioner → Advanced', topics: ['Supervised & unsupervised learning', 'Feature engineering & model selection', 'Evaluation & interpretability', 'MLOps awareness'], tag: 'Advanced' },
+  { icon: '✨', title: 'LLMs & Generative AI', level: 'All levels', topics: ['Prompt engineering & LLM fundamentals', 'RAG & vector search', 'AI agents & automation', 'Enterprise GenAI governance'], tag: 'Trending' },
+  { icon: '🛠️', title: 'Tools & Modern Stack', level: 'Role-based', topics: ['Git, Airflow, Docker', 'Cloud data platforms', 'Jupyter → production handoff', 'Industry tool fluency'], tag: 'Practical' },
 ];
-
-const formats = ['Bootcamps', 'Enterprise Academies', 'Workshop Sprints', 'Train-the-Trainer'];
 ---
 
 <section id="curriculum" class="py-20">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="reveal mb-10">
-      <p class="section-eyebrow">What I teach</p>
-      <h2 class="section-heading">Full-stack data &amp; AI.</h2>
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal mb-12">
+      <p class="section-eyebrow">Full-stack curriculum</p>
+      <h2 class="section-heading">Every competency your data &amp; AI org needs.</h2>
+      <p class="text-stone-500 max-w-2xl mt-2">Modular pillars that stack into role-based learning paths — customized per team, industry, and maturity level.</p>
     </div>
 
-    <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
-      {topics.map((t, i) => (
-        <div class="card text-center py-5 hover:border-brand-500/30 transition-colors" style={`transition-delay: ${i * 40}ms`}>
-          <span class="text-2xl block mb-2">{t.icon}</span>
-          <span class="text-sm text-stone-300 font-medium">{t.name}</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+      {pillars.map((p, i) => (
+        <div class="reveal card-hover flex flex-col" style={`transition-delay: ${i * 40}ms`}>
+          <div class="flex justify-between mb-2">
+            <span class="text-xl">{p.icon}</span>
+            <span class="chip-muted text-[10px]">{p.tag}</span>
+          </div>
+          <h3 class="font-semibold text-stone-100 text-sm mb-0.5">{p.title}</h3>
+          <p class="text-[11px] text-brand-400 mb-3">{p.level}</p>
+          <ul class="space-y-1.5 mt-auto">
+            {p.topics.map(t => (
+              <li class="text-xs text-stone-500 flex gap-1.5"><span class="text-brand-500">›</span>{t}</li>
+            ))}
+          </ul>
         </div>
       ))}
     </div>
 
-    <div class="reveal flex flex-wrap gap-2 justify-center">
-      {formats.map(f => (
-        <span class="chip-brand text-xs">{f}</span>
-      ))}
-    </div>
   </div>
 </section>

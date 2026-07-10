@@ -3,17 +3,20 @@ import { PORTFOLIO_URL } from '../config';
 ---
 
 <section id="contact" class="py-20">
-  <div class="max-w-5xl mx-auto px-6">
+  <div class="max-w-6xl mx-auto px-6">
     <div class="reveal card text-center max-w-2xl mx-auto p-10 md:p-12 border-brand-500/20 bg-gradient-to-b from-brand-950/30 to-stone-900/60">
       <p class="section-eyebrow">Let's talk</p>
       <h2 class="font-display text-3xl md:text-4xl text-stone-50 font-semibold mb-3">
         Build your next cohort.
       </h2>
-      <p class="text-stone-400 text-sm mb-8 max-w-md mx-auto">
-        GenAI sprint, data academy, or custom bootcamp — tell me your team, stack, and timeline.
+      <p class="text-stone-400 text-sm mb-2 max-w-md mx-auto">
+        GenAI sprint, data academy, or custom bootcamp — share your team, stack, and timeline.
+      </p>
+      <p class="text-stone-600 text-xs mb-8 max-w-sm mx-auto">
+        Typical first call: skill level, target competencies, delivery preference (virtual / hybrid / onsite).
       </p>
 
-      <div class="flex flex-wrap gap-3 justify-center">
+      <div class="flex flex-wrap gap-3 justify-center mb-6">
         <a href="mailto:karuna.mangla@gmail.com?subject=Corporate%20Training%20Inquiry" class="btn-primary text-sm">
           Email Karuna
         </a>
@@ -21,13 +24,19 @@ import { PORTFOLIO_URL } from '../config';
           LinkedIn
         </a>
       </div>
+
+      <div class="flex flex-wrap gap-2 justify-center">
+        <span class="chip-muted text-[10px]">Python · SQL · PySpark</span>
+        <span class="chip-muted text-[10px]">BI · ML · GenAI</span>
+        <span class="chip-muted text-[10px]">5,000+ learners</span>
+      </div>
     </div>
   </div>
 </section>
 
 <footer class="py-6 border-t border-stone-800/80">
-  <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-600">
-    <p>© {new Date().getFullYear()} Karuna Manglla</p>
+  <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-600">
+    <p>© {new Date().getFullYear()} Karuna Manglla · Corporate Data Science &amp; AI Training</p>
     <div class="flex gap-5">
       <a href={PORTFOLIO_URL} target="_blank" rel="noopener noreferrer" class="hover:text-stone-400 transition-colors">Portfolio</a>
       <a href="mailto:karuna.mangla@gmail.com" class="hover:text-stone-400 transition-colors">Email</a>

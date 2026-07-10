@@ -1,61 +1,29 @@
 ---
 const orgs = [
-  {
-    name: 'upGrad',
-    full: 'upGrad',
-    tagline: 'Professional upskilling at scale',
-    role: 'Data Science & AI programs for working professionals',
-    accent: 'from-orange-500/20 to-transparent border-orange-500/20',
-  },
-  {
-    name: 'Coding Ninjas',
-    full: 'Coding Ninjas',
-    tagline: "India's leading coding education platform",
-    role: 'Python, DSA & ML cohorts — campus to corporate',
-    accent: 'from-violet-500/20 to-transparent border-violet-500/20',
-  },
-  {
-    name: 'BITS Pilani',
-    full: 'BITS Pilani',
-    tagline: 'Premier institute · Work-integrated learning',
-    role: 'Advanced analytics & data science for degree learners',
-    accent: 'from-sky-500/20 to-transparent border-sky-500/20',
-  },
-  {
-    name: 'Info Edge',
-    full: 'Info Edge',
-    tagline: 'Naukri.com · AI-first product company',
-    role: 'SQL, BI & data literacy for product & analytics teams',
-    accent: 'from-blue-500/20 to-transparent border-blue-500/20',
-  },
-  {
-    name: 'Madrid Solutions',
-    full: 'Madrid Software Training Solutions',
-    tagline: 'Enterprise IT training partner',
-    role: 'Full-stack data engineering & cloud analytics bootcamps',
-    accent: 'from-brand-500/20 to-transparent border-brand-500/25',
-  },
+  { name: 'upGrad', tagline: 'Professional upskilling at scale', role: 'Data Science & AI programs for working professionals', accent: 'border-orange-500/20 bg-orange-950/20' },
+  { name: 'Coding Ninjas', tagline: "India's leading coding education platform", role: 'Python, DSA & ML cohorts — campus to corporate', accent: 'border-violet-500/20 bg-violet-950/20' },
+  { name: 'BITS Pilani', tagline: 'Premier institute · Work-integrated learning', role: 'Advanced analytics & data science for degree learners', accent: 'border-sky-500/20 bg-sky-950/20' },
+  { name: 'Info Edge', tagline: 'Naukri.com · AI-first product company', role: 'SQL, BI & data literacy for product & analytics teams', accent: 'border-blue-500/20 bg-blue-950/20' },
+  { name: 'Madrid Solutions', tagline: 'Madrid Software Training Solutions', role: 'Full-stack data engineering & cloud analytics bootcamps', accent: 'border-brand-500/25 bg-brand-950/25' },
+  { name: 'Edwisor', tagline: 'Career acceleration & live industry projects', role: 'Data Science mentorship & job-ready skill programs', accent: 'border-pink-500/20 bg-pink-950/20' },
+  { name: 'Datafolkz', tagline: 'Data science community & corporate training', role: 'Analytics workshops, ML sprints & practitioner upskilling', accent: 'border-lime-500/20 bg-lime-950/20' },
 ];
 ---
 
 <section id="orgs" class="py-20">
-  <div class="max-w-5xl mx-auto px-6">
+  <div class="max-w-6xl mx-auto px-6">
     <div class="reveal mb-12">
       <p class="section-eyebrow">Trusted by</p>
       <h2 class="section-heading">Organizations I've trained with.</h2>
+      <p class="text-stone-500 max-w-2xl mt-2">Edtech leaders, premier institutes, and enterprise L&amp;D partners — across India and global virtual cohorts.</p>
     </div>
 
-    <div class="grid gap-4">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {orgs.map((org, i) => (
-        <div
-          class={`reveal flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 md:p-6 rounded-2xl border bg-gradient-to-r ${org.accent} hover:border-brand-500/30 transition-colors`}
-          style={`transition-delay: ${i * 50}ms`}
-        >
-          <div>
-            <h3 class="font-display text-2xl text-stone-50 font-semibold">{org.name}</h3>
-            <p class="text-xs text-stone-500 mt-0.5">{org.tagline}</p>
-          </div>
-          <p class="text-sm text-stone-400 sm:text-right max-w-md">{org.role}</p>
+        <div class={`reveal p-5 rounded-2xl border ${org.accent} hover:border-brand-500/30 transition-colors`} style={`transition-delay: ${i * 40}ms`}>
+          <h3 class="font-display text-xl text-stone-50 font-semibold">{org.name}</h3>
+          <p class="text-[11px] text-stone-500 mt-1 uppercase tracking-wider">{org.tagline}</p>
+          <p class="text-sm text-stone-400 mt-3 leading-relaxed">{org.role}</p>
         </div>
       ))}
     </div>

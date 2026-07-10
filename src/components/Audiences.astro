@@ -1,0 +1,36 @@
+---
+const audiences = [
+  { icon: '🎓', title: 'College Graduates & Early Career', age: 'Ages 20–25', description: 'Bridge academic theory and industry-ready skills. Python, SQL, statistics, and professional workflows from day one.', outcomes: ['Job-ready foundation', 'Capstone projects', 'Interview confidence', 'Mentorship'] },
+  { icon: '💼', title: 'Working Professionals & Analysts', age: 'Ages 25–40', description: 'Upskill analysts into data scientists and business teams into data-literate decision-makers. Mapped to your stack and KPIs.', outcomes: ['Role-specific acceleration', 'Cross-functional fluency', 'Production workflows', 'On-the-job application'] },
+  { icon: '👔', title: 'Senior Leaders & Executives', age: 'Ages 35–50', description: 'AI literacy for decision-makers — vendor evaluation, GenAI strategy, governance, and responsible adoption.', outcomes: ['Strategic AI fluency', 'Build vs buy judgment', 'Risk awareness', 'Boardroom confidence'] },
+  { icon: '🏢', title: 'Corporate L&D & HR Partners', age: 'Enterprise programs', description: 'Academy design, train-the-trainer, cohort management, and measurable upskilling ROI with leadership buy-in.', outcomes: ['Custom curriculum', 'Skill assessments', 'Academy blueprints', 'Executive reporting'] },
+];
+---
+
+<section id="audiences" class="py-20 bg-stone-900/25 border-y border-stone-800/80">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal mb-12">
+      <p class="section-eyebrow">Who I train</p>
+      <h2 class="section-heading">Every stage of the career arc.</h2>
+      <p class="text-stone-500 max-w-2xl mt-2">From fresh graduates to executives steering GenAI strategy — programs calibrated by age, experience, and business context (20–50).</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      {audiences.map((a, i) => (
+        <div class="reveal card-hover" style={`transition-delay: ${i * 60}ms`}>
+          <div class="flex gap-3 mb-3">
+            <span class="text-2xl">{a.icon}</span>
+            <div>
+              <h3 class="font-semibold text-stone-100">{a.title}</h3>
+              <span class="chip-brand text-[10px] mt-1">{a.age}</span>
+            </div>
+          </div>
+          <p class="text-sm text-stone-400 mb-4 leading-relaxed">{a.description}</p>
+          <div class="grid grid-cols-2 gap-2">
+            {a.outcomes.map(o => <span class="text-[11px] text-stone-400 bg-stone-800/50 border border-stone-700/50 rounded-lg px-2.5 py-1.5">{o}</span>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

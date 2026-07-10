@@ -1,0 +1,51 @@
+---
+const formats = [
+  { icon: '🚀', title: 'Corporate Bootcamps', duration: '1 – 4 weeks', description: 'Intensive cohort programs with labs, checkpoints, and a business-context capstone.', ideal: 'Teams needing fast capability lift' },
+  { icon: '🏛️', title: 'Enterprise Academies', duration: '3 – 12 months', description: 'Modular tracks with milestone assessments and progressive complexity for L&D-led academies.', ideal: 'Internal data talent pipelines' },
+  { icon: '📅', title: 'Workshop Sprints', duration: '1 – 3 days', description: 'Deep-dives on GenAI, SQL, PySpark, or BI — high impact, minimal time away from work.', ideal: 'Specific skill gaps' },
+  { icon: '🎯', title: 'New-Hire Onboarding', duration: '2 – 6 weeks', description: 'Structured ramp for graduates and lateral hires before they hit production workflows.', ideal: 'Growing data orgs' },
+  { icon: '🔄', title: 'Train-the-Trainer', duration: 'Custom', description: 'Curriculum handoff, facilitator guides, and co-delivery for internal champions.', ideal: 'Self-sufficient academies' },
+  { icon: '🌐', title: 'Virtual · Hybrid · Onsite', duration: 'Global', description: 'Live virtual, hybrid kickoffs, or in-person intensives across time zones.', ideal: 'Distributed teams' },
+];
+---
+
+<section id="formats" class="py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal mb-12">
+      <p class="section-eyebrow">Engagement formats</p>
+      <h2 class="section-heading">Corporate training, your way.</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {formats.map((f, i) => (
+        <div class="reveal card-hover flex flex-col" style={`transition-delay: ${i * 50}ms`}>
+          <div class="flex gap-3 mb-3">
+            <span class="text-xl">{f.icon}</span>
+            <div>
+              <h3 class="font-semibold text-stone-100 text-sm">{f.title}</h3>
+              <p class="text-[10px] text-brand-400 font-mono">{f.duration}</p>
+            </div>
+          </div>
+          <p class="text-xs text-stone-400 leading-relaxed flex-1 mb-3">{f.description}</p>
+          <p class="text-[10px] text-stone-600 border-t border-stone-800 pt-3">Best for: <span class="text-stone-400">{f.ideal}</span></p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Learning path graphic -->
+    <div class="reveal mt-12 card p-6 overflow-x-auto">
+      <p class="text-[10px] text-stone-500 uppercase tracking-widest font-semibold mb-5">Typical corporate learning path</p>
+      <div class="flex items-center gap-0 min-w-max">
+        {['Assess', 'Foundations', 'Applied', 'Advanced', 'GenAI', 'Capstone'].map((step, i) => (
+          <>
+            <div class="flex flex-col items-center gap-1 px-4 py-3 rounded-xl border border-stone-700 bg-stone-800/40 min-w-[88px]">
+              <span class="text-[9px] font-mono text-stone-600">0{i + 1}</span>
+              <span class="text-xs font-semibold text-stone-200">{step}</span>
+            </div>
+            {i < 5 && <svg width="16" height="10" viewBox="0 0 20 12" class="text-stone-700 shrink-0"><path d="M0 6h17M12 1l6 5-6 5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>}
+          </>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

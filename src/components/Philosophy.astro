@@ -1,0 +1,32 @@
+---
+const principles = [
+  { num: '01', title: 'Business-first, not tool-first', description: 'Every module ties back to decisions, revenue, cost, risk, or efficiency.', icon: '🎯' },
+  { num: '02', title: 'Learn by doing — always', description: 'Labs and capstones replace passive lectures. Coding by hour two.', icon: '🛠️' },
+  { num: '03', title: 'Role-based learning paths', description: 'Analysts, engineers, managers, and executives get different curricula.', icon: '🗺️' },
+  { num: '04', title: 'Measurable outcomes', description: 'Pre/post assessments and skill matrices for L&D ROI conversations.', icon: '📏' },
+  { num: '05', title: 'Production credibility', description: 'LTV engines, ML pipelines, GenAI at 500M+ user scale — I teach what I ship.', icon: '⚙️' },
+  { num: '06', title: 'Sustainable upskilling', description: 'Playbooks and mentor-style follow-through so learning sticks.', icon: '🌱' },
+];
+---
+
+<section id="philosophy" class="py-20 bg-stone-900/25 border-y border-stone-800/80">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal mb-12 text-center max-w-2xl mx-auto">
+      <p class="section-eyebrow">Training philosophy</p>
+      <h2 class="section-heading">How 5,000+ learners retain what they learn.</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {principles.map((p, i) => (
+        <div class="reveal card group hover:border-brand-500/25 transition-colors" style={`transition-delay: ${i * 50}ms`}>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xl">{p.icon}</span>
+            <span class="text-[10px] font-mono text-brand-500/60">{p.num}</span>
+          </div>
+          <h3 class="font-semibold text-stone-100 text-sm mb-1.5 group-hover:text-brand-300 transition-colors">{p.title}</h3>
+          <p class="text-xs text-stone-500 leading-relaxed">{p.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

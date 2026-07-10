@@ -1,21 +1,73 @@
 ---
+import GlobalReach from './graphics/GlobalReach.astro';
+import LearningStack from './graphics/LearningStack.astro';
+
 const stats = [
-  { value: 5000, suffix: '+', label: 'Learners trained' },
-  { value: 7, suffix: '+', label: 'Years in production DS/AI' },
-  { value: 15, suffix: '+', label: 'Competency areas' },
-  { value: 5, suffix: '', label: 'Major training partners' },
+  {
+    value: 5000, suffix: '+', label: 'Learners trained worldwide',
+    description: 'College graduates to working professionals across global cohorts',
+    gradient: 'from-brand-500/15', border: 'border-brand-500/25', iconColor: 'text-brand-400',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>`,
+  },
+  {
+    value: 7, suffix: '+', label: 'Years in production data science',
+    description: 'Real systems at 500M+ user scale — not classroom hypotheticals',
+    gradient: 'from-violet-500/15', border: 'border-violet-500/25', iconColor: 'text-violet-400',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+  },
+  {
+    value: 7, suffix: '', label: 'Major training partners',
+    description: 'upGrad, Coding Ninjas, BITS Pilani, Info Edge & more',
+    gradient: 'from-sky-500/15', border: 'border-sky-500/25', iconColor: 'text-sky-400',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l7-4 7 4v14"/></svg>`,
+  },
+  {
+    value: 15, suffix: '+', label: 'Competency areas',
+    description: 'Python through GenAI — full-stack data & AI curriculum',
+    gradient: 'from-emerald-500/15', border: 'border-emerald-500/25', iconColor: 'text-emerald-400',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 2 7l10 5 10-5-10-5z"/></svg>`,
+  },
+  {
+    value: 30, suffix: '', label: 'Years of learner age range',
+    description: 'Professionals aged 20–50 across every career stage',
+    gradient: 'from-accent-500/15', border: 'border-accent-500/25', iconColor: 'text-accent-400',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>`,
+  },
+  {
+    value: 100, suffix: '%', label: 'Hands-on delivery',
+    description: 'Labs, capstones, and business-relevant exercises',
+    gradient: 'from-rose-500/15', border: 'border-rose-500/25', iconColor: 'text-rose-400',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"/></svg>`,
+  },
 ];
 ---
 
-<section id="impact" class="py-14 border-y border-stone-800/80 bg-stone-900/30">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<section id="impact" class="py-20 border-y border-stone-800/80">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal mb-12">
+      <p class="section-eyebrow">Training impact</p>
+      <h2 class="section-heading">Built for corporate outcomes.</h2>
+      <p class="text-stone-500 max-w-2xl mt-2">Measurable upskilling for L&amp;D leaders and engineering managers — not vanity workshops.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-[1fr_1.1fr] gap-8 mb-12 items-center">
+      <div class="reveal hidden md:block">
+        <GlobalReach />
+      </div>
+      <div class="reveal hidden md:block">
+        <LearningStack />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {stats.map((s, i) => (
-        <div class="reveal text-center" style={`transition-delay: ${i * 60}ms`}>
-          <div class="text-3xl md:text-4xl font-display font-semibold text-stone-50 tabular-nums">
+        <div class={`reveal rounded-2xl border bg-gradient-to-br ${s.gradient} ${s.border} p-5 hover:-translate-y-0.5 transition-transform`} style={`transition-delay: ${i * 50}ms`}>
+          <div class={`${s.iconColor} mb-3`} set:html={s.icon} />
+          <div class="text-3xl font-display font-semibold text-stone-50 tabular-nums">
             <span data-counter data-target={s.value} data-suffix={s.suffix}>0{s.suffix}</span>
           </div>
-          <p class="text-xs text-stone-500 mt-1 uppercase tracking-wider">{s.label}</p>
+          <p class="font-medium text-stone-300 text-sm mt-1">{s.label}</p>
+          <p class="text-xs text-stone-500 mt-1 leading-relaxed">{s.description}</p>
         </div>
       ))}
     </div>
