@@ -1,0 +1,32 @@
+---
+const highlights = [
+  { icon: '👥', title: 'Cross-functional pod leadership', desc: 'Analytics, Content, Finance & Product — pods that ship under ambiguity.' },
+  { icon: '📈', title: 'Analyst → data scientist pathways', desc: 'Mind Share sessions upskilled the broader DS&A org into production ML workflows.' },
+  { icon: '🎯', title: 'Stakeholder alignment', desc: 'From analysts to the CEO — the go-to for hard data problems and complex alignment.' },
+  { icon: '🔄', title: 'Hiring & mentoring', desc: 'Active in hiring loops, mentoring junior scientists, and measuring success by how fast others move.' },
+];
+---
+
+<section id="team" class="py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-3">
+      <div>
+        <p class="section-eyebrow">Team & leadership</p>
+        <h2 class="font-display text-2xl md:text-3xl text-stone-50 font-semibold">I lead teams, not just sessions.</h2>
+      </div>
+      <p class="text-xs text-stone-500 max-w-sm">
+        Manager at JioStar's 100+ member Data Science &amp; Analytics org — featured in the company newsletter as spotlight employee.
+      </p>
+    </div>
+
+    <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      {highlights.map((h, i) => (
+        <div class="card p-4 hover:border-brand-500/25 transition-colors" style={`transition-delay: ${i * 40}ms`}>
+          <span class="text-lg mb-2 block">{h.icon}</span>
+          <h3 class="text-sm font-semibold text-stone-200 mb-1">{h.title}</h3>
+          <p class="text-[11px] text-stone-500 leading-relaxed">{h.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
