@@ -1,34 +1,56 @@
 ---
+import { SESSION_RATING } from '../config';
+
 const projects = [
   {
     org: 'upGrad', title: 'Enterprise Data Science Accelerator', hook: 'Zero to production-ready in 12 weeks.',
-    outcome: 'Working professionals — analysts, engineers, PMs — shipped capstone projects on real business datasets. Python → SQL → ML → stakeholder presentation.',
-    tags: ['Python', 'SQL', 'Machine Learning', 'Capstone'], stat: 'Multi-cohort', accent: 'border-orange-500/20',
+    outcome: 'Working professionals — analysts, engineers, PMs — shipped capstone projects on real business datasets. Python → SQL → data science → ML → stakeholder presentation.',
+    tags: ['Data Science', 'Python', 'SQL', 'ML', 'Capstone'], stat: 'Multi-cohort', accent: 'border-orange-500/20',
   },
   {
     org: 'Coding Ninjas', title: 'GenAI Practitioner Bootcamp', hook: 'LLMs teams use on Monday.',
     outcome: 'Prompt engineering, RAG pipelines, and AI agents for developers and data professionals entering the GenAI wave.',
-    tags: ['LLMs', 'RAG', 'GenAI', 'Python'], stat: 'Bootcamp', accent: 'border-violet-500/20',
+    tags: ['LLMs', 'RAG', 'GenAI', 'Data Science'], stat: 'Bootcamp', accent: 'border-violet-500/20',
+  },
+  {
+    org: 'Edwisor', title: 'Interview Prep & Soft Skills Intensive', hook: 'Job-ready, not just skill-ready.',
+    outcome: 'Mock interviews, behavioral rounds, stakeholder communication, and salary negotiation — layered on top of technical data science training.',
+    tags: ['Interview prep', 'Soft skills', 'Mock interviews', 'Career'], stat: 'Career program', accent: 'border-pink-500/20',
+  },
+  {
+    org: 'Coding Ninjas', title: 'Weekend Project Workshop', hook: 'Ship an app, website, or working model in 2 days.',
+    outcome: 'Hands-on build sprints — learners leave with a deployed portfolio piece: web apps, dashboards, ML demos, or working prototypes over a weekend.',
+    tags: ['Portfolio', 'Web app', 'Working models', 'Weekend sprint'], stat: '2-day workshop', accent: 'border-violet-500/20',
+  },
+  {
+    org: 'Madrid Solutions', title: '3–4 Hour Skills Sprint', hook: 'High impact in a single afternoon.',
+    outcome: 'Focused deep-dives on SQL, Power BI, Python, or GenAI — one concept, one outcome, one deliverable by end of session.',
+    tags: ['SQL', 'Power BI', 'Python', 'GenAI'], stat: '3–4 hr sprint', accent: 'border-brand-500/25',
+  },
+  {
+    org: 'University partnerships', title: 'College Seminars & Webinars', hook: 'Campus to career bridge.',
+    outcome: 'Data science, AI literacy, and career pathway seminars for undergraduates — delivered at DU, AKTU, MDU, and partner universities across India.',
+    tags: ['Seminars', 'Webinars', 'DU', 'AKTU', 'MDU'], stat: 'Campus outreach', accent: 'border-sky-500/20',
+  },
+  {
+    org: 'On demand', title: 'Guest Lectures & Custom Sessions', hook: 'Your topic, your timeline.',
+    outcome: 'Bespoke guest lectures, faculty development sessions, and on-demand workshops tailored to institute or corporate needs.',
+    tags: ['Guest lecture', 'On demand', 'Custom', 'Faculty'], stat: 'Flexible', accent: 'border-amber-500/20',
+  },
+  {
+    org: 'Hackathons & techfests', title: 'Judge & Talent Discovery', hook: 'Finding tomorrow\'s builders today.',
+    outcome: 'Judging panels and mentorship at university hackathons and techfests — identifying standout talent and guiding project evaluation at DU, AKTU, MDU, and national events.',
+    tags: ['Hackathons', 'Techfests', 'Judging', 'Talent discovery'], stat: 'University events', accent: 'border-emerald-500/20',
   },
   {
     org: 'BITS Pilani', title: 'Advanced Analytics for Professionals', hook: 'Rigour of BITS. Relevance of industry.',
-    outcome: 'Statistics, EDA, and predictive modeling for WIL learners — academic foundations meets corporate-grade workflows.',
-    tags: ['Statistics', 'EDA', 'Predictive Modeling'], stat: 'WIL program', accent: 'border-sky-500/20',
+    outcome: 'Statistics, EDA, and predictive modeling for WIL learners — academic foundations meets corporate-grade data science workflows.',
+    tags: ['Statistics', 'EDA', 'Data Science', 'Predictive Modeling'], stat: 'WIL program', accent: 'border-sky-500/20',
   },
   {
     org: 'Info Edge', title: 'Product Analytics Upskilling Sprint', hook: 'Data fluency at scale.',
     outcome: 'SQL mastery, dashboard design, and metric frameworks for product managers and analysts at Naukri\'s parent company.',
     tags: ['SQL', 'BI', 'Product Analytics'], stat: 'L&D sprint', accent: 'border-blue-500/20',
-  },
-  {
-    org: 'Madrid Solutions', title: 'Data Engineering & PySpark Cohort', hook: 'Laptops to cluster-scale.',
-    outcome: 'PySpark, ETL design, and Databricks workflows for enterprise IT trainees — analyst skills to engineering-grade pipelines.',
-    tags: ['PySpark', 'Databricks', 'ETL'], stat: 'Enterprise series', accent: 'border-brand-500/25',
-  },
-  {
-    org: 'Edwisor', title: 'Career-Ready Data Science Program', hook: 'Industry projects. Interview confidence.',
-    outcome: 'End-to-end data science mentorship — from Python foundations to portfolio projects and mock interviews for career switchers and fresh graduates.',
-    tags: ['Python', 'ML', 'Projects', 'Mentorship'], stat: 'Career program', accent: 'border-pink-500/20',
   },
   {
     org: 'Datafolkz', title: 'Corporate Analytics Workshop Series', hook: 'Community rigour. Corporate pace.',
@@ -43,7 +65,11 @@ const projects = [
     <div class="reveal mb-12">
       <p class="section-eyebrow">Signature projects</p>
       <h2 class="section-heading">Programs that persuade.</h2>
-      <p class="text-stone-500 max-w-2xl mt-2">Representative engagements — each built around business outcomes, not syllabus checklists.</p>
+      <p class="text-stone-500 max-w-2xl mt-2">
+        Representative engagements — data science bootcamps, soft skills, interview prep, weekend project builds,
+        campus seminars, hackathon judging, and on-demand guest lectures.
+        <span class="text-brand-400 font-semibold">{SESSION_RATING}+</span> out of 5 average learner rating.
+      </p>
     </div>
 
     <div class="space-y-4">

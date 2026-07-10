@@ -1,8 +1,10 @@
-/** Curated from subjective_feedbacks export — 2,960 ratings, 1,125 written notes, 4.73 avg */
+/** Curated from subjective_feedbacks export — 2,960 ratings, 1,125 written notes */
+import { SESSION_RATING } from '../config';
+
 export const feedbackStats = {
   learners: 275,
   notes: 1100,
-  avgRating: 4.73,
+  avgRating: SESSION_RATING,
 };
 
 export const learnerTestimonials = [

@@ -1,20 +1,16 @@
 ---
 const orgs = [
-  { name: 'upGrad', domain: 'upgrad.com', tagline: 'Professional upskilling at scale', role: 'Data Science & AI programs for working professionals', accent: 'border-orange-500/20 bg-orange-950/20' },
-  { name: 'Coding Ninjas', domain: 'codingninjas.com', tagline: "India's leading coding education platform", role: 'Python, DSA & ML cohorts — campus to corporate', accent: 'border-violet-500/20 bg-violet-950/20' },
-  { name: 'BITS Pilani', domain: 'bits-pilani.ac.in', tagline: 'Premier institute · Work-integrated learning', role: 'Advanced analytics & data science for degree learners', accent: 'border-sky-500/20 bg-sky-950/20' },
-  { name: 'Info Edge', domain: 'infoedge.in', tagline: 'Naukri.com · AI-first product company', role: 'SQL, BI & data literacy for product & analytics teams', accent: 'border-blue-500/20 bg-blue-950/20' },
-  { name: 'Madrid Solutions', domain: 'madridsoftwaretrainingsolutions.com', tagline: 'Madrid Software Training Solutions', role: 'Full-stack data engineering & cloud analytics bootcamps', accent: 'border-brand-500/25 bg-brand-950/25' },
-  { name: 'Edwisor', domain: 'edwisor.com', tagline: 'Career acceleration & live industry projects', role: 'Data Science mentorship & job-ready skill programs', accent: 'border-pink-500/20 bg-pink-950/20' },
-  { name: 'Datafolkz', domain: 'datafolkz.com', tagline: 'Data science community & corporate training', role: 'Analytics workshops, ML sprints & practitioner upskilling', accent: 'border-lime-500/20 bg-lime-950/20' },
+  { name: 'upGrad', logo: '/assets/logos/upgrad.svg', tagline: 'Professional upskilling at scale', role: 'Data Science & AI programs for working professionals', accent: 'border-orange-500/20 bg-orange-950/20' },
+  { name: 'Coding Ninjas', logo: '/assets/logos/coding-ninjas.svg', tagline: "India's leading coding education platform", role: 'Python, DSA, data science & ML cohorts — campus to corporate', accent: 'border-violet-500/20 bg-violet-950/20' },
+  { name: 'BITS Pilani', logo: '/assets/logos/bits-pilani.svg', tagline: 'Premier institute · Work-integrated learning', role: 'Advanced analytics & data science for degree learners', accent: 'border-sky-500/20 bg-sky-950/20' },
+  { name: 'Info Edge', logo: '/assets/logos/info-edge.svg', tagline: 'Naukri.com · AI-first product company', role: 'SQL, BI & data literacy for product & analytics teams', accent: 'border-blue-500/20 bg-blue-950/20' },
+  { name: 'Madrid Solutions', logo: '/assets/logos/madrid-solutions.svg', tagline: 'Madrid Software Training Solutions', role: 'Full-stack data engineering & cloud analytics bootcamps', accent: 'border-brand-500/25 bg-brand-950/25' },
+  { name: 'Edwisor', logo: '/assets/logos/edwisor.svg', tagline: 'Career acceleration & live industry projects', role: 'Data Science mentorship & job-ready skill programs', accent: 'border-pink-500/20 bg-pink-950/20' },
+  { name: 'Datafolkz', logo: '/assets/logos/datafolkz.svg', tagline: 'Data science community & corporate training', role: 'Analytics workshops, ML sprints & practitioner upskilling', accent: 'border-lime-500/20 bg-lime-950/20' },
 ];
-
-function initials(name: string) {
-  return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-}
 ---
 
-<section id="orgs" class="py-20 border-t border-stone-800/80">
+<section id="orgs" class="py-20 border-y border-stone-800/80 bg-stone-900/20">
   <div class="max-w-6xl mx-auto px-6">
     <div class="reveal mb-12">
       <p class="section-eyebrow">Trusted by</p>
@@ -26,16 +22,14 @@ function initials(name: string) {
       {orgs.map((org, i) => (
         <div class={`reveal p-5 rounded-2xl border ${org.accent} hover:border-brand-500/30 transition-colors`} style={`transition-delay: ${i * 40}ms`}>
           <div class="flex items-center gap-3 mb-3">
-            <div class="w-12 h-12 rounded-xl bg-white/95 flex items-center justify-center shrink-0 overflow-hidden border border-stone-700/30">
+            <div class="w-14 h-10 rounded-lg bg-white flex items-center justify-center shrink-0 overflow-hidden border border-stone-200/20 px-2">
               <img
-                src={`https://logo.clearbit.com/${org.domain}`}
+                src={org.logo}
                 alt={`${org.name} logo`}
-                class="w-9 h-9 object-contain org-logo"
+                class="max-h-8 max-w-full object-contain"
                 loading="lazy"
+                draggable="false"
               />
-              <span class="org-logo-fallback hidden w-full h-full items-center justify-center text-xs font-bold text-stone-700">
-                {initials(org.name)}
-              </span>
             </div>
             <h3 class="font-display text-xl text-stone-50 font-semibold">{org.name}</h3>
           </div>
@@ -46,16 +40,3 @@ function initials(name: string) {
     </div>
   </div>
 </section>
-
-<script>
-  document.querySelectorAll('#orgs .org-logo').forEach((img) => {
-    img.addEventListener('error', () => {
-      (img as HTMLImageElement).style.display = 'none';
-      const fallback = img.nextElementSibling as HTMLElement;
-      if (fallback) {
-        fallback.classList.remove('hidden');
-        fallback.classList.add('flex');
-      }
-    });
-  });
-</script>

@@ -1,5 +1,6 @@
 ---
 const pillars = [
+  { icon: '🔬', title: 'Data Science', level: 'Foundational → Advanced', topics: ['End-to-end DS lifecycle', 'Problem framing & hypothesis design', 'Feature engineering & modeling', 'From notebook to business impact'], tag: 'Core' },
   { icon: '🐍', title: 'Python for Data Science', level: 'Foundational → Advanced', topics: ['Data structures & scripting', 'Pandas, NumPy, visualization', 'OOP & production patterns', 'APIs, automation & notebooks'], tag: 'Core' },
   { icon: '🗄️', title: 'SQL & Data Engineering', level: 'Analyst → Engineer', topics: ['Query fundamentals to window functions', 'Data modeling & warehousing', 'ETL/ELT design patterns', 'Performance tuning'], tag: 'Core' },
   { icon: '⚡', title: 'PySpark & Big Data', level: 'Practitioner → Advanced', topics: ['Distributed computing', 'Spark SQL & DataFrames', 'Databricks workflows', 'Pipeline optimization'], tag: 'Scale' },
@@ -16,10 +17,10 @@ const pillars = [
     <div class="reveal mb-12">
       <p class="section-eyebrow">Full-stack curriculum</p>
       <h2 class="section-heading">Every competency your data &amp; AI org needs.</h2>
-      <p class="text-stone-500 max-w-2xl mt-2">Modular pillars that stack into role-based learning paths — customized per team, industry, and maturity level.</p>
+      <p class="text-stone-500 max-w-2xl mt-2">Modular pillars — data science, Python, SQL, ML, GenAI, and more — stacked into role-based learning paths customized per team and maturity level.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
       {pillars.map((p, i) => (
         <div class="reveal card-hover flex flex-col" style={`transition-delay: ${i * 40}ms`}>
           <div class="flex justify-between mb-2">

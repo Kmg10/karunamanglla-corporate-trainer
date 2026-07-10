@@ -8,7 +8,7 @@ interface Props {
 
 const {
   title = 'Karuna Manglla — Corporate Data Science & AI Trainer',
-  description = 'Corporate Data Science & AI trainer — 5,000+ learners trained globally. Python, SQL, PySpark, BI, ML, and GenAI programs for enterprises. Ages 20–50, beginner to advanced.',
+  description = 'Corporate Data Science & AI trainer — 5,000+ learners, 4.93+ rating. Data science, Python, SQL, PySpark, BI, ML, and GenAI programs for enterprises.',
 } = Astro.props;
 ---
 
@@ -21,10 +21,11 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta name="robots" content="noarchive" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="site-protected">
     <slot />
     <script>
       const observer = new IntersectionObserver(
@@ -67,5 +68,48 @@ const {
       );
       document.querySelectorAll('[data-counter]').forEach((el) => counterObserver.observe(el));
     </script>
+    <script is:inline>
+      (function () {
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+        document.addEventListener('dragstart', (e) => {
+          if (e.target instanceof HTMLImageElement) e.preventDefault();
+        });
+        document.addEventListener('keydown', (e) => {
+          const key = e.key.toLowerCase();
+          if (
+            key === 'f12' ||
+            (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(key)) ||
+            (e.metaKey && e.altKey && ['i', 'j', 'c'].includes(key)) ||
+            (e.ctrlKey && key === 'u') ||
+            (e.metaKey && key === 'u')
+          ) {
+            e.preventDefault();
+          }
+        });
+        document.addEventListener('copy', (e) => {
+          if (!e.target.closest('.allow-select')) e.preventDefault();
+        });
+      })();
+    </script>
   </body>
 </html>
+
+<style is:global>
+  .site-protected {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .site-protected .allow-select,
+  .site-protected .allow-select * {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+  .site-protected img {
+    -webkit-user-drag: none;
+    user-drag: none;
+    pointer-events: none;
+  }
+  .site-protected .allow-select img {
+    pointer-events: auto;
+  }
+</style>

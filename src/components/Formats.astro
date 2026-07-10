@@ -1,9 +1,14 @@
 ---
 const formats = [
-  { icon: '🚀', title: 'Corporate Bootcamps', duration: '1 – 4 weeks', description: 'Intensive cohort programs with labs, checkpoints, and a business-context capstone.', ideal: 'Teams needing fast capability lift' },
+  { icon: '🚀', title: 'Corporate Bootcamps', duration: '1 – 4 weeks', description: 'Intensive data science cohort programs with labs, checkpoints, and a business-context capstone.', ideal: 'Teams needing fast capability lift' },
   { icon: '🏛️', title: 'Enterprise Academies', duration: '3 – 12 months', description: 'Modular tracks with milestone assessments and progressive complexity for L&D-led academies.', ideal: 'Internal data talent pipelines' },
+  { icon: '⚡', title: '3–4 Hour Workshops', duration: 'Single session', description: 'Focused sprints on SQL, Power BI, Python, GenAI, or soft skills — one topic, one deliverable.', ideal: 'Busy teams & skill gaps' },
+  { icon: '🏗️', title: 'Weekend Project Builds', duration: '2 days', description: 'Ship an app, website, dashboard, or working ML model over a weekend — portfolio-ready output.', ideal: 'Portfolio & hands-on builders' },
+  { icon: '🎓', title: 'College Seminars & Webinars', duration: '1 – 3 hrs', description: 'Campus data science seminars, AI literacy talks, and career pathway sessions at DU, AKTU, MDU & more.', ideal: 'Universities & student bodies' },
+  { icon: '🎤', title: 'Guest Lectures & On-Demand', duration: 'Flexible', description: 'Bespoke guest lectures, faculty development, and custom sessions on your topic and timeline.', ideal: 'Institutes & event organizers' },
+  { icon: '🏆', title: 'Hackathon & Techfest Judging', duration: 'Event-based', description: 'Panel judging and mentorship at university hackathons — helping discover standout talent.', ideal: 'DU, AKTU, MDU & national fests' },
   { icon: '📅', title: 'Workshop Sprints', duration: '1 – 3 days', description: 'Deep-dives on GenAI, SQL, PySpark, or BI — high impact, minimal time away from work.', ideal: 'Specific skill gaps' },
-  { icon: '🎯', title: 'New-Hire Onboarding', duration: '2 – 6 weeks', description: 'Structured ramp for graduates and lateral hires before they hit production workflows.', ideal: 'Growing data orgs' },
+  { icon: '🎯', title: 'Interview Prep & Soft Skills', duration: 'Multi-session', description: 'Mock interviews, communication coaching, and career packaging layered on technical training.', ideal: 'Job-ready graduates & switchers' },
   { icon: '🔄', title: 'Train-the-Trainer', duration: 'Custom', description: 'Curriculum handoff, facilitator guides, and co-delivery for internal champions.', ideal: 'Self-sufficient academies' },
   { icon: '🌐', title: 'Virtual · Hybrid · Onsite', duration: 'Global', description: 'Live virtual, hybrid kickoffs, or in-person intensives across time zones.', ideal: 'Distributed teams' },
 ];
@@ -14,6 +19,7 @@ const formats = [
     <div class="reveal mb-12">
       <p class="section-eyebrow">Engagement formats</p>
       <h2 class="section-heading">Corporate training, your way.</h2>
+      <p class="text-stone-500 max-w-2xl mt-2">Bootcamps to 3-hour sprints, campus seminars to hackathon judging — formats that fit your audience and schedule.</p>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -32,11 +38,10 @@ const formats = [
       ))}
     </div>
 
-    <!-- Learning path graphic -->
     <div class="reveal mt-12 card p-6 overflow-x-auto">
       <p class="text-[10px] text-stone-500 uppercase tracking-widest font-semibold mb-5">Typical corporate learning path</p>
       <div class="flex items-center gap-0 min-w-max">
-        {['Assess', 'Foundations', 'Applied', 'Advanced', 'GenAI', 'Capstone'].map((step, i) => (
+        {['Assess', 'Foundations', 'Data Science', 'Applied', 'GenAI', 'Capstone'].map((step, i) => (
           <>
             <div class="flex flex-col items-center gap-1 px-4 py-3 rounded-xl border border-stone-700 bg-stone-800/40 min-w-[88px]">
               <span class="text-[9px] font-mono text-stone-600">0{i + 1}</span>
