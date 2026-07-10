@@ -10,8 +10,8 @@ const domains = ['Machine Learning', 'Data Science', 'AI', 'GenAI', 'LLMs'];
       <p class="section-eyebrow">International credentials</p>
       <h2 class="section-heading">Certified across the full AI stack.</h2>
       <p class="text-stone-500 max-w-2xl mx-auto mt-2">
-        Machine learning, data science, AI, GenAI, and LLM credentials from leading global universities and institutions —
-        the same rigour I bring into every corporate cohort.
+        Industry-recognised credentials in ML, data science, AI, GenAI, and LLMs from IBM, Google, DeepLearning.AI, and Microsoft —
+        the same practical rigour I bring into every corporate cohort.
       </p>
       <div class="flex flex-wrap justify-center gap-2 mt-5">
         {domains.map((d) => (
@@ -30,7 +30,7 @@ const domains = ['Machine Learning', 'Data Science', 'AI', 'GenAI', 'LLMs'];
             <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center shrink-0 overflow-hidden border border-stone-200/20 p-1.5">
               <img
                 src={c.logo}
-                alt={`${c.university} logo`}
+                alt={`${c.issuer} logo`}
                 class="max-h-9 max-w-full object-contain"
                 loading="lazy"
                 draggable="false"
@@ -42,17 +42,21 @@ const domains = ['Machine Learning', 'Data Science', 'AI', 'GenAI', 'LLMs'];
           <p class="text-[10px] font-semibold uppercase tracking-widest text-stone-500 mb-1">{c.domain}</p>
           <h3 class="font-display text-base text-stone-50 font-semibold leading-snug mb-2 flex-1">{c.title}</h3>
 
-          <div class="border-t border-stone-800/80 pt-3 mt-auto">
-            <p class="text-sm font-semibold text-brand-300">{c.university}</p>
-            <p class="text-[10px] text-stone-600 mt-0.5">{c.platform}</p>
+          <div class="border-t border-stone-800/80 pt-3 mt-auto flex items-center justify-between gap-2">
+            <div>
+              <p class="text-sm font-semibold text-brand-300">{c.issuer}</p>
+              <p class="text-[10px] text-stone-600 mt-0.5">{c.platform}</p>
+            </div>
+            {c.platform === 'Coursera' && (
+              <img src="/assets/logos/cert/coursera.svg" alt="Coursera" class="h-6 w-6 rounded opacity-80" loading="lazy" draggable="false" />
+            )}
           </div>
         </div>
       ))}
     </div>
 
     <p class="reveal text-center text-xs text-stone-600 mt-10 max-w-xl mx-auto">
-      International certifications from Stanford, Harvard, MIT, DeepLearning.AI, IBM, and Google —
-      backing every program in ML, data science, AI, GenAI, and LLMs.
+      Credentials from IBM, Google, DeepLearning.AI, and Microsoft — widely recognised in industry hiring and L&amp;D programs.
     </p>
   </div>
 </section>
