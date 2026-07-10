@@ -1,0 +1,58 @@
+---
+import { certifications } from '../data/certifications';
+
+const domains = ['Machine Learning', 'Data Science', 'AI', 'GenAI', 'LLMs'];
+---
+
+<section id="certifications" class="py-20 border-y border-stone-800/80">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal mb-12 text-center">
+      <p class="section-eyebrow">International credentials</p>
+      <h2 class="section-heading">Certified across the full AI stack.</h2>
+      <p class="text-stone-500 max-w-2xl mx-auto mt-2">
+        Machine learning, data science, AI, GenAI, and LLM credentials from leading global universities and institutions —
+        the same rigour I bring into every corporate cohort.
+      </p>
+      <div class="flex flex-wrap justify-center gap-2 mt-5">
+        {domains.map((d) => (
+          <span class="chip-muted text-[10px]">{d}</span>
+        ))}
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {certifications.map((c, i) => (
+        <div
+          class={`reveal group rounded-2xl border ${c.accent} p-5 hover:border-brand-500/35 hover:-translate-y-1 transition-all duration-300 flex flex-col`}
+          style={`transition-delay: ${i * 40}ms`}
+        >
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center shrink-0 overflow-hidden border border-stone-200/20 p-1.5">
+              <img
+                src={c.logo}
+                alt={`${c.university} logo`}
+                class="max-h-9 max-w-full object-contain"
+                loading="lazy"
+                draggable="false"
+              />
+            </div>
+            <span class="chip-brand text-[9px]">{c.tag}</span>
+          </div>
+
+          <p class="text-[10px] font-semibold uppercase tracking-widest text-stone-500 mb-1">{c.domain}</p>
+          <h3 class="font-display text-base text-stone-50 font-semibold leading-snug mb-2 flex-1">{c.title}</h3>
+
+          <div class="border-t border-stone-800/80 pt-3 mt-auto">
+            <p class="text-sm font-semibold text-brand-300">{c.university}</p>
+            <p class="text-[10px] text-stone-600 mt-0.5">{c.platform}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <p class="reveal text-center text-xs text-stone-600 mt-10 max-w-xl mx-auto">
+      International certifications from Stanford, Harvard, MIT, DeepLearning.AI, IBM, and Google —
+      backing every program in ML, data science, AI, GenAI, and LLMs.
+    </p>
+  </div>
+</section>
