@@ -1,0 +1,97 @@
+---
+const projects = [
+  {
+    org: 'upGrad',
+    title: 'Enterprise Data Science Accelerator',
+    hook: 'Zero to production-ready in 12 weeks.',
+    outcome: 'Cohorts of working professionals — analysts, engineers, PMs — shipped capstone projects using real business datasets. Python → SQL → ML → stakeholder presentation.',
+    tags: ['Python', 'SQL', 'Machine Learning', 'Capstone'],
+    stat: 'Multi-cohort delivery',
+    gradient: 'from-orange-950/40 to-stone-900/60',
+    border: 'border-orange-500/20',
+  },
+  {
+    org: 'Coding Ninjas',
+    title: 'GenAI Practitioner Bootcamp',
+    hook: 'LLMs that teams actually use on Monday.',
+    outcome: 'Hands-on program covering prompt engineering, RAG pipelines, and AI agents — designed for developers and data professionals moving into the GenAI wave.',
+    tags: ['LLMs', 'RAG', 'GenAI', 'Python'],
+    stat: 'High-intensity bootcamp',
+    gradient: 'from-violet-950/40 to-stone-900/60',
+    border: 'border-violet-500/20',
+  },
+  {
+    org: 'BITS Pilani',
+    title: 'Advanced Analytics for Professionals',
+    hook: 'Rigour of BITS. Relevance of industry.',
+    outcome: 'Statistics, exploratory analysis, and predictive modeling for degree learners balancing full-time work — bridging academic foundations with corporate-grade workflows.',
+    tags: ['Statistics', 'EDA', 'Predictive Modeling'],
+    stat: 'WIL program delivery',
+    gradient: 'from-sky-950/40 to-stone-900/60',
+    border: 'border-sky-500/20',
+  },
+  {
+    org: 'Info Edge',
+    title: 'Product Analytics Upskilling Sprint',
+    hook: 'Data fluency for a 10,000-person product org.',
+    outcome: 'SQL mastery, dashboard design, and metric frameworks for product managers and analysts at Naukri\'s parent company — decisions backed by data, not gut.',
+    tags: ['SQL', 'BI', 'Product Analytics', 'Tableau'],
+    stat: 'Corporate L&D sprint',
+    gradient: 'from-blue-950/40 to-stone-900/60',
+    border: 'border-blue-500/20',
+  },
+  {
+    org: 'Madrid Solutions',
+    title: 'Data Engineering & PySpark Cohort',
+    hook: 'From laptops to cluster-scale thinking.',
+    outcome: 'PySpark, ETL design, and Databricks workflows for enterprise IT trainees — the bridge between analyst skills and engineering-grade data pipelines.',
+    tags: ['PySpark', 'Databricks', 'ETL', 'SQL'],
+    stat: 'Enterprise bootcamp series',
+    gradient: 'from-brand-900/50 to-stone-900/60',
+    border: 'border-brand-500/25',
+  },
+];
+---
+
+<section id="projects" class="py-20 bg-stone-900/20 border-y border-stone-800/80">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="reveal mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div>
+        <p class="section-eyebrow">Signature projects</p>
+        <h2 class="section-heading">Programs that persuade.</h2>
+      </div>
+      <p class="text-sm text-stone-500 max-w-xs md:text-right">
+        Representative engagements — each built around business outcomes, not syllabus checklists.
+      </p>
+    </div>
+
+    <div class="space-y-5">
+      {projects.map((p, i) => (
+        <article
+          class={`reveal group relative overflow-hidden rounded-2xl border ${p.border} bg-gradient-to-br ${p.gradient} p-6 md:p-8 hover:border-brand-500/35 transition-all duration-300`}
+          style={`transition-delay: ${i * 60}ms`}
+        >
+          <div class="flex flex-col md:flex-row md:items-start gap-6">
+            <div class="md:w-1/3 shrink-0">
+              <span class="text-xs font-semibold uppercase tracking-widest text-brand-400">{p.org}</span>
+              <h3 class="font-display text-2xl md:text-3xl text-stone-50 font-semibold mt-1 leading-tight">{p.title}</h3>
+              <p class="text-accent-400 font-medium text-sm mt-2 italic">{p.hook}</p>
+            </div>
+            <div class="flex-1">
+              <p class="text-stone-400 text-sm leading-relaxed mb-4">{p.outcome}</p>
+              <div class="flex flex-wrap gap-2">
+                {p.tags.map(t => (
+                  <span class="chip-muted text-[11px]">{t}</span>
+                ))}
+              </div>
+            </div>
+            <div class="md:text-right shrink-0">
+              <span class="text-[10px] uppercase tracking-widest text-stone-600 font-semibold">{p.stat}</span>
+            </div>
+          </div>
+          <div class="absolute top-0 right-0 w-32 h-32 bg-brand-500/5 rounded-full blur-3xl group-hover:bg-brand-500/10 transition-colors pointer-events-none"></div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

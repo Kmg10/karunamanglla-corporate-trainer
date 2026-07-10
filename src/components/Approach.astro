@@ -1,0 +1,31 @@
+---
+import { PORTFOLIO_URL } from '../config';
+
+const principles = [
+  { title: 'Ship, don\'t slide', desc: 'Labs and capstones from hour one.' },
+  { title: 'Role-mapped paths', desc: 'Analysts, engineers, leaders — different tracks.' },
+  { title: 'Practitioner-led', desc: 'I build production ML at 500M+ user scale.' },
+];
+---
+
+<section id="approach" class="py-16 border-t border-stone-800/80">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="reveal grid md:grid-cols-3 gap-6 mb-10">
+      {principles.map((p, i) => (
+        <div class="text-center" style={`transition-delay: ${i * 60}ms`}>
+          <h3 class="font-display text-xl text-stone-50 font-semibold mb-1">{p.title}</h3>
+          <p class="text-sm text-stone-500">{p.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="reveal card flex flex-col sm:flex-row items-center justify-between gap-4 p-5 border-brand-500/20 bg-brand-950/20">
+      <p class="text-sm text-stone-400">
+        <span class="text-stone-200 font-medium">Production credibility:</span> Data Science &amp; AI Manager at JioStar (Disney+ Hotstar) — the systems behind the syllabus.
+      </p>
+      <a href={PORTFOLIO_URL} target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm shrink-0">
+        View portfolio ↗
+      </a>
+    </div>
+  </div>
+</section>

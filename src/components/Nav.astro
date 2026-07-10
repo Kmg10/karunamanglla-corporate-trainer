@@ -2,28 +2,21 @@
 import { PORTFOLIO_URL } from '../config';
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-gray-950/85 backdrop-blur-md border-b border-white/5">
-  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="#hero" class="font-display font-semibold text-white text-lg tracking-tight">
-      KM<span class="text-emerald-500">.</span>
-      <span class="text-gray-500 font-normal text-sm ml-2 hidden sm:inline">Corporate Trainer</span>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-surface-950/90 backdrop-blur-md border-b border-stone-800/80">
+  <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+    <a href="#hero" class="font-display font-semibold text-stone-50 text-xl tracking-tight">
+      Karuna <span class="text-brand-400">Manglla</span>
     </a>
 
-    <div class="hidden md:flex items-center gap-7 text-sm text-gray-400">
-      <a href="#impact" class="hover:text-white transition-colors">Impact</a>
-      <a href="#curriculum" class="hover:text-white transition-colors">Curriculum</a>
-      <a href="#audiences" class="hover:text-white transition-colors">Audiences</a>
-      <a href="#formats" class="hover:text-white transition-colors">Formats</a>
-      <a href="#philosophy" class="hover:text-white transition-colors">Approach</a>
-      <a href="#credibility" class="hover:text-white transition-colors">Why Me</a>
-      <a href={PORTFOLIO_URL} target="_blank" rel="noopener noreferrer" class="hover:text-brand-300 transition-colors inline-flex items-center gap-1 text-brand-400">
-        Work Portfolio
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7M9 7h8v8"/></svg>
-      </a>
+    <div class="hidden md:flex items-center gap-6 text-sm text-stone-500">
+      <a href="#projects" class="hover:text-stone-200 transition-colors">Projects</a>
+      <a href="#orgs" class="hover:text-stone-200 transition-colors">Organizations</a>
+      <a href="#curriculum" class="hover:text-stone-200 transition-colors">Curriculum</a>
+      <a href={PORTFOLIO_URL} target="_blank" rel="noopener noreferrer" class="text-accent-400 hover:text-accent-300 transition-colors">Portfolio ↗</a>
     </div>
 
-    <a href="#contact" class="px-4 py-2 text-sm font-semibold bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors">
-      Book a session
+    <a href="#contact" class="px-4 py-2 text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white rounded-lg transition-colors">
+      Book training
     </a>
   </div>
 </nav>

@@ -1,0 +1,63 @@
+---
+const orgs = [
+  {
+    name: 'upGrad',
+    full: 'upGrad',
+    tagline: 'Professional upskilling at scale',
+    role: 'Data Science & AI programs for working professionals',
+    accent: 'from-orange-500/20 to-transparent border-orange-500/20',
+  },
+  {
+    name: 'Coding Ninjas',
+    full: 'Coding Ninjas',
+    tagline: "India's leading coding education platform",
+    role: 'Python, DSA & ML cohorts — campus to corporate',
+    accent: 'from-violet-500/20 to-transparent border-violet-500/20',
+  },
+  {
+    name: 'BITS Pilani',
+    full: 'BITS Pilani',
+    tagline: 'Premier institute · Work-integrated learning',
+    role: 'Advanced analytics & data science for degree learners',
+    accent: 'from-sky-500/20 to-transparent border-sky-500/20',
+  },
+  {
+    name: 'Info Edge',
+    full: 'Info Edge',
+    tagline: 'Naukri.com · AI-first product company',
+    role: 'SQL, BI & data literacy for product & analytics teams',
+    accent: 'from-blue-500/20 to-transparent border-blue-500/20',
+  },
+  {
+    name: 'Madrid Solutions',
+    full: 'Madrid Software Training Solutions',
+    tagline: 'Enterprise IT training partner',
+    role: 'Full-stack data engineering & cloud analytics bootcamps',
+    accent: 'from-brand-500/20 to-transparent border-brand-500/25',
+  },
+];
+---
+
+<section id="orgs" class="py-20">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="reveal mb-12">
+      <p class="section-eyebrow">Trusted by</p>
+      <h2 class="section-heading">Organizations I've trained with.</h2>
+    </div>
+
+    <div class="grid gap-4">
+      {orgs.map((org, i) => (
+        <div
+          class={`reveal flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 md:p-6 rounded-2xl border bg-gradient-to-r ${org.accent} hover:border-brand-500/30 transition-colors`}
+          style={`transition-delay: ${i * 50}ms`}
+        >
+          <div>
+            <h3 class="font-display text-2xl text-stone-50 font-semibold">{org.name}</h3>
+            <p class="text-xs text-stone-500 mt-0.5">{org.tagline}</p>
+          </div>
+          <p class="text-sm text-stone-400 sm:text-right max-w-md">{org.role}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
